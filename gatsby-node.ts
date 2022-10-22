@@ -1,6 +1,6 @@
-import { resolve } from 'path';
-import { GatsbyNode } from 'gatsby';
 import LoadablePlugin from '@loadable/webpack-plugin';
+import { GatsbyNode } from 'gatsby';
+import { resolve } from 'path';
 
 const PROJECT_ROOT = resolve(__dirname);
 

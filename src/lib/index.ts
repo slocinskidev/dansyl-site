@@ -1,2 +1,2 @@
-export * from './logger';
 export * from './clsxm';
+export * from './logger';

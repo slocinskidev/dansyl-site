@@ -9,8 +9,19 @@ module.exports = {
     es2021: true,
     node: true,
     jest: true,
+    'jest/globals': true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'airbnb-typescript',
+    'prettier',
+    'plugin:jest/recommended',
+    'plugin:testing-library/react',
+    'plugin:jest-formatting/recommended',
+    'plugin:jest-dom/recommended',
+    'plugin:tailwindcss/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -20,7 +31,17 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
+  plugins: [
+    'react',
+    'react-hooks',
+    '@typescript-eslint',
+    'prettier',
+    'jest',
+    'jest-formatting',
+    'tailwindcss',
+    'simple-import-sort',
+    'eslint-plugin-jest-dom',
+  ],
   settings: {
     'import/resolver': {
       typescript: {},
@@ -39,5 +60,18 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.test.ts', './src/test-utils/*', './jest/*'],
+        peerDependencies: true,
+      },
+    ],
+    'react/require-default-props': OFF,
+    'react/prop-types': OFF,
+    'react/forbid-prop-types': OFF,
+    'simple-import-sort/imports': ERROR,
+    'simple-import-sort/exports': ERROR,
+    'react/jsx-props-no-spreading': OFF,
   },
 };

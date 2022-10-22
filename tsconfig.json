@@ -112,7 +112,9 @@
     ".eslintrc.js",
     "./commitlint.config.js",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "./jest/**/*",
+    "./plopfile.js"
   ],
   "exclude": ["node_modules"]
 }
