@@ -22,6 +22,14 @@ const plugins: GatsbyConfig['plugins'] = [
     },
   },
   'gatsby-plugin-image',
+  {
+    resolve: 'gatsby-plugin-react-svg',
+    options: {
+      rule: {
+        include: /icons/, // See below to configure properly
+      },
+    },
+  },
   'gatsby-plugin-sitemap',
   {
     resolve: 'gatsby-plugin-manifest',

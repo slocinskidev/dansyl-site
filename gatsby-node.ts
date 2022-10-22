@@ -26,6 +26,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
         '@/pages': resolve(PROJECT_ROOT, 'src/pages'),
         '@/styles': resolve(PROJECT_ROOT, 'src/styles'),
         '@/test-utils': resolve(PROJECT_ROOT, 'src/test-utils'),
+        '@/types': resolve(PROJECT_ROOT, 'src/types'),
       },
     },
   });
