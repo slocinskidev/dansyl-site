@@ -12,9 +12,16 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@loadable/webpack-plugin": "^5.15.2",
+    "clsx": "^1.2.1",
+    "dotenv": "^16.0.3",
     "gatsby": "^4.24.4",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-manifest": "^4.24.0",
@@ -28,16 +35,40 @@
     "tailwind-merge": "^1.7.0"
   },
   "devDependencies": {
-    "@loadable/webpack-plugin": "^5.15.2",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/loadable__webpack-plugin": "^5.7.3",
     "@types/node": "^18.11.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "autoprefixer": "^10.4.12",
-    "clsx": "^1.2.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gatsby-plugin-postcss": "^5.24.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.2.1",
     "typescript": "^4.8.4"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "**/*.{json,css,scss,md}": [
+      "prettier -w"
+    ]
   }
 }
