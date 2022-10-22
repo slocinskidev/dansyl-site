@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
+import { logger } from '@/lib';
 
 const HomePage = ({ data }: PageProps<Queries.HomePageQuery>) => {
-  console.log(data);
+  logger({ data }, '{contentfulHomePage.slug}.tsx line 6');
 
-  return <div>{data.contentfulHomePage?.pageName}</div>;
+  return <div className="text-3xl font-thin">{data.contentfulHomePage?.pageName}</div>;
 };
 
 export default HomePage;

@@ -1,4 +1,8 @@
+import { resolve } from 'path';
 import { GatsbyNode } from 'gatsby';
+import LoadablePlugin from '@loadable/webpack-plugin';
+
+const PROJECT_ROOT = resolve(__dirname);
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
   actions.createTypes(`
@@ -8,4 +12,21 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         pageName: String!
       }
   `);
+};
+
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions }) => {
+  actions.setWebpackConfig({
+    plugins: [new LoadablePlugin()],
+    resolve: {
+      alias: {
+        '@/assets': resolve(PROJECT_ROOT, 'src/assets'),
+        '@/components': resolve(PROJECT_ROOT, 'src/components'),
+        '@/constants': resolve(PROJECT_ROOT, 'src/constants'),
+        '@/lib': resolve(PROJECT_ROOT, 'src/lib'),
+        '@/pages': resolve(PROJECT_ROOT, 'src/pages'),
+        '@/styles': resolve(PROJECT_ROOT, 'src/styles'),
+        '@/test-utils': resolve(PROJECT_ROOT, 'src/test-utils'),
+      },
+    },
+  });
 };
