@@ -29,7 +29,7 @@ module.exports = {
     },
     ecmaVersion: 12,
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: ['./tsconfig.json'],
   },
   plugins: [
     'react',
@@ -73,5 +73,7 @@ module.exports = {
     'simple-import-sort/imports': ERROR,
     'simple-import-sort/exports': ERROR,
     'react/jsx-props-no-spreading': OFF,
+    'tailwindcss/no-custom-classname': OFF,
+    'import/no-cycle': OFF,
   },
 };
