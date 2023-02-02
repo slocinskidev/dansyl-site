@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  fragment ImageFragment on ContentfulAsset {
+  fragment Image on ContentfulAsset {
     gatsbyImageData
     description
   }

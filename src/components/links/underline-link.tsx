@@ -12,8 +12,8 @@ export const UnderlineLink = <T extends unknown>({
   <UnstyledLink
     {...rest}
     className={clsxm(
-      'relative font-medium text-indigo-600',
-      'before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-100',
+      'relative font-medium text-pelorous-600',
+      'before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-pelorous-600 before:transition hover:before:scale-100',
       className,
     )}
   >

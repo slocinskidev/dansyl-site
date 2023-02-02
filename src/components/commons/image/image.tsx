@@ -1,18 +1,16 @@
-import { GatsbyImage, GatsbyImageProps, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage, GatsbyImageProps } from 'gatsby-plugin-image';
 import React from 'react';
 
-export type ImageType = {
-  gatsbyImageData: IGatsbyImageData;
-  description: string;
-} & Omit<GatsbyImageProps, 'image'>;
+export type ImageType = Queries.ImageFragment & Omit<GatsbyImageProps, 'image' | 'alt'>;
 
-export const Image = ({ gatsbyImageData, description, className, ...delegated }: ImageType) => (
-  <GatsbyImage
-    {...{
-      ...delegated,
-      alt: description,
-      image: gatsbyImageData,
-      className,
-    }}
-  />
-);
+export const Image = ({ gatsbyImageData, description, className, ...delegated }: ImageType) =>
+  gatsbyImageData ? (
+    <GatsbyImage
+      {...{
+        ...delegated,
+        alt: description || '',
+        image: gatsbyImageData,
+        className,
+      }}
+    />
+  ) : null;

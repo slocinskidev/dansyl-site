@@ -2,29 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --tw-color-primary-50: 255 245 255;
-  --tw-color-primary-100: 195 234 254;
-  --tw-color-primary-200: 134 214 253;
-  --tw-color-primary-300: 74 193 252;
-  --tw-color-primary-400: 14 172 251;
-  --tw-color-primary-500: 3 134 201;
-  --tw-color-primary-600: 2 108 161;
-  --tw-color-primary-700: 2 81 121;
-  --tw-color-primary-800: 1 54 80;
-  --tw-color-primary-900: 1 27 40;
-  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #E1F5FF */
-  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #C3EAFE*/
-  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #86D6FD */
-  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #4AC1FC */
-  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #0EACFB */
-  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #0386C9 */
-  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #026CA1 */
-  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #025179 */
-  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #013650 */
-  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #011B28 */
-}
-
 @layer base {
   @font-face {
     font-family: 'Inter';

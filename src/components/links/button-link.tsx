@@ -17,11 +17,11 @@ export const ButtonLink = <T extends unknown>({
   <UnstyledLink
     {...rest}
     className={clsxm(
-      'inline-block rounded border',
+      'inline-block rounded border h-fit w-fit',
       variant === 'solid' &&
-        'border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500',
+        'border-pelorous-600 bg-pelorous-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pelorous-600 focus:outline-none focus:ring active:text-pelorous-500',
       variant === 'outline' &&
-        'border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500',
+        'border-pelorous-600 px-12 py-3 text-sm font-medium text-pelorous-600 hover:bg-pelorous-600 hover:text-white focus:outline-none focus:ring active:bg-pelorous-500',
       className,
     )}
   >

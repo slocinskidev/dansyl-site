@@ -114,7 +114,8 @@
     "**/*.ts",
     "**/*.tsx",
     "./jest/**/*",
-    "./plopfile.js"
+    "./plopfile.js",
+    "./tailwind.config.js"
   ],
   "exclude": ["node_modules"]
 }

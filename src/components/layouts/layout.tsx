@@ -1,36 +1,37 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
-import { Header } from './header';
+import { Footer, Header } from '@/components/layouts';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-  const data = useStaticQuery(graphql`
-    query {
+  const { contentfulBrand, contentfulFooter } = useStaticQuery<Queries.BrandQuery>(graphql`
+    query Brand {
       contentfulBrand {
-        logo {
-          ...ImageFragment
+        ...ContentfulBrand
+      }
+      contentfulFooter {
+        image {
+          ...Image
         }
-        companyName {
-          companyName
-        }
-        companyDescription {
-          companyDescription
-        }
-        email
-        phone
       }
     }
   `);
-
-  console.log(data);
 
   return (
     <>
       <a href='#main' className='jump-to-content'>
         Przejdź do głównej treści strony
       </a>
-      <Header />
+      {contentfulBrand?.logo ? <Header {...{ logo: contentfulBrand?.logo }} /> : null}
       <main id='main'>{children}</main>
+      <Footer
+        {...{
+          email: contentfulBrand?.email || '',
+          phone: contentfulBrand?.phone || [''],
+          image: contentfulFooter?.image || undefined,
+          facebook: contentfulBrand?.facebook || '',
+        }}
+      />
     </>
   );
 };
