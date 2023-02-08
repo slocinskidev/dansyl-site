@@ -5,6 +5,7 @@ import { TbEngine, TbManualGearbox } from 'react-icons/tb';
 
 import FuelIcon from '@/assets/icons/fuel.svg';
 import { Image } from '@/components/commons';
+import { UnstyledLink } from '@/components/links';
 
 export const CarCard = ({
   name,
@@ -16,8 +17,11 @@ export const CarCard = ({
   seats,
   year,
 }: Queries.CarCardFragment) => (
-  <a href='/' className='block rounded-lg p-4 shadow-sm shadow-indigo-100'>
-    {image ? <Image {...image} /> : null}
+  <UnstyledLink
+    href='/'
+    className='block rounded-lg p-4 shadow-sm shadow-indigo-100 transition-shadow hover:shadow-lg'
+  >
+    {image ? <Image className='rounded-lg' {...image} /> : null}
 
     <div className='mt-2'>
       <dl>
@@ -34,7 +38,7 @@ export const CarCard = ({
         </div>
       </dl>
 
-      <ul className='mt-6 flex items-center gap-8 text-xs flex-wrap'>
+      <ul className='mt-6 flex flex-wrap items-center gap-5 text-xs'>
         {engine ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
             <TbEngine className='text-pelorous-900' />
@@ -85,7 +89,7 @@ export const CarCard = ({
 
         {fuel ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
-            <FuelIcon className='w-3 h-3 text-pelorous-900' />
+            <FuelIcon className='h-3 w-3 text-pelorous-900' />
 
             <div className='mt-1.5 sm:ml-3 sm:mt-0'>
               <p className='text-gray-500'>Paliwo</p>
@@ -96,5 +100,5 @@ export const CarCard = ({
         ) : null}
       </ul>
     </div>
-  </a>
+  </UnstyledLink>
 );

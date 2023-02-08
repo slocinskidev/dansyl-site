@@ -13,11 +13,13 @@ export const HeroBanner = ({
   description,
   image,
 }: Queries.HeroBannerFragment) => (
-  <div className='mx-auto my-20 grid max-w-screen-xl place-items-center gap-14 px-4 lg:grid-cols-2'>
-    {image ? <Image className='lg:order-1' {...image} /> : null}
+  <div className='mx-auto my-20 grid max-w-screen-xl place-items-center gap-14 px-4 md:grid-cols-2'>
+    {image ? (
+      <Image className='rounded-lg md:order-1 md:h-[500px]' {...image} />
+    ) : null}
     <div className='grid gap-4'>
       {heading ? (
-        <h1 className='text-5xl leading-tight text-pelorous-900'>
+        <h1 className='text-3xl leading-tight text-pelorous-900 md:text-5xl'>
           Bezgotówkowe naprawy z OC i AC
         </h1>
       ) : null}
@@ -26,7 +28,7 @@ export const HeroBanner = ({
             description as RenderRichTextData<ContentfulRichTextGatsbyReference>
           )
         : null}
-      <div className='mt-6 flex flex-wrap justify-center gap-4'>
+      <div className='mt-6 flex flex-wrap justify-center gap-4 md:justify-start'>
         <ButtonLink href='/'>Sprawdź naszą ofertę</ButtonLink>
         <ButtonLink variant='outline' href='/'>
           Najczęściej zadawane pytania

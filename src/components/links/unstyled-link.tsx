@@ -16,13 +16,20 @@ export const UnstyledLink = <T extends unknown>({
   href,
   ariaLabel,
   ...rest
-}: PropsWithChildren<PropsWithoutRef<Omit<GatsbyLinkProps<T>, 'to'> & UnstyledLinkType>>) => {
+}: PropsWithChildren<
+  PropsWithoutRef<Omit<GatsbyLinkProps<T>, 'to'> & UnstyledLinkType>
+>) => {
   const isNewTab =
-    openNewTab !== undefined ? openNewTab : href && !href.startsWith('/') && !href.startsWith('#');
+    openNewTab !== undefined
+      ? openNewTab
+      : href && !href.startsWith('/') && !href.startsWith('#');
 
   if (!isNewTab) {
     return (
-      <GatsbyLink {...{ to: href, 'aria-label': ariaLabel }} className={clsxm('w-max', className)}>
+      <GatsbyLink
+        {...{ to: href, 'aria-label': ariaLabel }}
+        className={clsxm('w-fit', className)}
+      >
         {children}
       </GatsbyLink>
     );
@@ -30,9 +37,14 @@ export const UnstyledLink = <T extends unknown>({
 
   return (
     <a
-      {...{ href, target: '_blank', rel: 'noopener noreferrer', 'aria-label': ariaLabel }}
+      {...{
+        href,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        'aria-label': ariaLabel,
+      }}
       {...rest}
-      className={clsxm('cursor-newtab, w-max', className)}
+      className={clsxm('cursor-newtab, w-fit', className)}
     >
       {children}
     </a>
