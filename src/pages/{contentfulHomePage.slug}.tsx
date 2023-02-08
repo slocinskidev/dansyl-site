@@ -2,10 +2,13 @@ import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 
 import { CarRentList, Faq, HeroBanner } from '@/components/home';
+import WhyUs from '@/components/home/why-us';
 import { Layout } from '@/components/layouts';
 import { logger } from '@/lib';
 
-const HomePage = ({ data: { contentfulHomePage } }: PageProps<Queries.HomePageQuery>) => {
+const HomePage = ({
+  data: { contentfulHomePage },
+}: PageProps<Queries.HomePageQuery>) => {
   logger({ contentfulHomePage }, '{contentfulHomePage.slug}.tsx line 6');
 
   return (
@@ -23,6 +26,7 @@ const HomePage = ({ data: { contentfulHomePage } }: PageProps<Queries.HomePageQu
           carList: contentfulHomePage?.carRentList?.carList ?? null,
         }}
       />
+      <WhyUs />
       <Faq />
     </Layout>
   );
