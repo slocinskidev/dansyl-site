@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CarCard } from '@/components/commons/car-card';
+import { CarCard } from './car-card';
 
 export const CarRentList = ({
   heading,
@@ -13,7 +13,7 @@ export const CarRentList = ({
       <ul className='grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {carList.map((car) =>
           car ? (
-            <li>
+            <li key={car.id}>
               <CarCard {...car} />
             </li>
           ) : null

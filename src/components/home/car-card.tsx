@@ -1,3 +1,4 @@
+import NiceModal, { ModalDef } from '@ebay/nice-modal-react';
 import React from 'react';
 import { GiCarSeat } from 'react-icons/gi';
 import { RxCalendar } from 'react-icons/rx';
@@ -5,7 +6,7 @@ import { TbEngine, TbManualGearbox } from 'react-icons/tb';
 
 import FuelIcon from '@/assets/icons/fuel.svg';
 import { Image } from '@/components/commons';
-import { UnstyledLink } from '@/components/links';
+import { CarRentModal } from '@/components/home/car-rent-modal';
 
 export const CarCard = ({
   name,
@@ -17,13 +18,16 @@ export const CarCard = ({
   seats,
   year,
 }: Queries.CarCardFragment) => (
-  <UnstyledLink
-    href='/'
-    className='block rounded-lg p-4 shadow-sm shadow-indigo-100 transition-shadow hover:shadow-lg'
+  <button
+    type='button'
+    className='block rounded-lg p-4 text-left shadow-sm shadow-indigo-100 transition-shadow hover:shadow-lg'
+    onClick={() => {
+      NiceModal.show('car-rent-modal', { name, price });
+    }}
   >
     {image ? <Image className='rounded-lg' {...image} /> : null}
-
-    <div className='mt-2'>
+    <ModalDef id='car-rent-modal' component={CarRentModal} />
+    <div className='mt-4'>
       <dl>
         <div>
           <dt className='sr-only'>Cena</dt>
@@ -100,5 +104,5 @@ export const CarCard = ({
         ) : null}
       </ul>
     </div>
-  </UnstyledLink>
+  </button>
 );
