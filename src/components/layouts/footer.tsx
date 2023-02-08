@@ -10,18 +10,16 @@ export type FooterType = {
 } & Pick<Queries.ContentfulBrandFragment, 'phone' | 'email' | 'facebook'>;
 
 export const Footer = ({ image, phone, email, facebook }: FooterType) => (
-  <footer aria-label='Stopka' className='bg-white lg:grid lg:grid-cols-5'>
-    {image ? (
-      <div className='relative block h-32 lg:col-span-2 lg:h-full'>
-        <Image {...image} />
-      </div>
-    ) : null}
+  <footer aria-label='Stopka' className='mx-auto max-w-screen-2xl bg-white'>
+    <div className='mx-auto grid max-w-screen-xl items-center gap-6 px-4 py-10 md:grid-cols-2 md:gap-10 lg:grid-cols-5'>
+      {image ? <Image className='lg:col-span-2' {...image} /> : null}
 
-    <div className='px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8'>
-      <div className='grid grid-cols-1 gap-8 sm:grid-cols-2'>
+      <div className='mt-5 grid gap-8 md:mt-0 lg:col-span-3'>
         <div>
           <p>
-            <span className='text-xs tracking-wide text-gray-500 uppercase'>Zadzwoń do nas</span>
+            <span className='text-xs uppercase tracking-wide text-gray-500'>
+              Zadzwoń do nas
+            </span>
             {phone
               ? phone.map(
                   (tel) =>
@@ -29,11 +27,11 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
                       <UnderlineLink
                         key={tel}
                         href={`tel:${tel.split(' ').join('')}`}
-                        className='block text-2xl font-medium text-gray-900 hover:opacity-75 sm:text-3xl'
+                        className='block text-2xl font-medium text-gray-900 sm:text-3xl'
                       >
                         {tel}
                       </UnderlineLink>
-                    ),
+                    )
                 )
               : null}
           </p>
@@ -43,33 +41,33 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
             <li>Sobota: 9:00 - 13:00</li>
           </ul>
 
-          <ul className='flex gap-6 mt-8'>
+          <ul className='mt-8 flex gap-6'>
             <li>
               <UnstyledLink
                 href={facebook ?? '/'}
-                className='text-gray-700 transition hover:opacity-75'
+                className='text-gray-700 transition-colors hover:text-pelorous-600'
               >
                 <span className='sr-only'>Facebook</span>
 
-                <FaFacebookSquare className='w-6 h-6' />
+                <FaFacebookSquare className='h-6 w-6' />
               </UnstyledLink>
             </li>
 
             <li>
               <UnstyledLink
                 href={`mailto:${email}`}
-                className='text-gray-700 transition hover:opacity-75'
+                className='text-gray-700 transition-colors hover:text-pelorous-600'
               >
                 <span className='sr-only'>Email</span>
 
-                <HiOutlineMail className='w-6 h-6' />
+                <HiOutlineMail className='h-6 w-6' />
               </UnstyledLink>
             </li>
           </ul>
         </div>
 
         <nav aria-label='Nawigacja - stopka' className='mt-6'>
-          <ul className='flex-col text-sm flex gap-y-3 gap-x-5 flex-wrap max-h-24'>
+          <ul className='flex max-h-24 flex-col flex-wrap gap-y-3 gap-x-5 text-sm'>
             <li>
               <UnderlineLink href='/'>O Nas</UnderlineLink>
             </li>
@@ -97,10 +95,10 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
         </nav>
       </div>
 
-      <div className='pt-12 mt-12 border-t border-gray-100'>
-        <div className='sm:flex sm:items-center sm:justify-between'>
-          <p className='mt-8 text-xs text-gray-500 sm:mt-0'>&copy; {new Date().getFullYear()}</p>
-        </div>
+      <div className='col-span-full mt-6 border-t border-gray-100 pt-10'>
+        <p className='text-center text-xs text-gray-500'>
+          &copy; {new Date().getFullYear()} dansyl.pl
+        </p>
       </div>
     </div>
   </footer>
