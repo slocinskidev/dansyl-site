@@ -2,6 +2,7 @@ import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 
 import { CarRentList, Faq, HeroBanner } from '@/components/home';
+import OpinionList from '@/components/home/opinion-list';
 import WhyUs from '@/components/home/why-us';
 import { Layout } from '@/components/layouts';
 import { logger } from '@/lib';
@@ -20,13 +21,14 @@ const HomePage = ({
           image: contentfulHomePage?.heroBanner?.image ?? null,
         }}
       />
+      <WhyUs />
       <CarRentList
         {...{
           heading: contentfulHomePage?.carRentList?.heading ?? null,
           carList: contentfulHomePage?.carRentList?.carList ?? null,
         }}
       />
-      <WhyUs />
+      <OpinionList />
       <Faq />
     </Layout>
   );
