@@ -10,7 +10,7 @@ export const CarRentList = ({
     {heading ? <h2 className='text-pelorous-900'>{heading}</h2> : null}
 
     {carList?.length ? (
-      <ul className='grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <ul className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {carList.map((car) =>
           car ? (
             <li key={car.id}>

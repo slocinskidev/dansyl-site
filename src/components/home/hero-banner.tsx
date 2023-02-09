@@ -14,9 +14,9 @@ export const HeroBanner = ({
   image,
 }: Queries.HeroBannerFragment) => (
   <div className='relative mx-auto grid place-items-center gap-14 bg-gray-100 py-20 px-4'>
-    <div className='mx-auto grid max-w-screen-xl place-items-center gap-14 px-4 md:grid-cols-2'>
+    <div className='mx-auto grid max-w-screen-xl place-items-center gap-14 px-4 lg:grid-cols-2'>
       {image ? (
-        <Image className='rounded-lg md:order-1 md:h-[500px]' {...image} />
+        <Image className='rounded-lg md:h-[600px] lg:order-1' {...image} />
       ) : null}
       <div className='grid gap-4 lg:gap-10'>
         {heading ? (

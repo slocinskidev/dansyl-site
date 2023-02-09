@@ -3,6 +3,8 @@ import 'swiper/css';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { breakpoint } from '@/hooks';
+
 const OpinionList = () => (
   <section className='bg-gray-100'>
     <div className='mx-auto max-w-screen-xl px-4 py-16'>
@@ -63,7 +65,15 @@ const OpinionList = () => (
         </div>
 
         <div className='col-span-2'>
-          <Swiper slidesPerView={2} spaceBetween={16}>
+          <Swiper
+            slidesPerView={1}
+            breakpoints={{
+              [breakpoint.md]: {
+                slidesPerView: 2,
+              },
+            }}
+            spaceBetween={16}
+          >
             <SwiperSlide className='swiper-slide'>
               <blockquote className='flex h-full flex-col justify-between bg-white p-12'>
                 <div>

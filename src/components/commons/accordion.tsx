@@ -1,12 +1,15 @@
+import {
+  ContentfulRichTextGatsbyReference,
+  renderRichText,
+  RenderRichTextData,
+} from 'gatsby-source-contentful/rich-text';
 import React from 'react';
 
-export const Accordion = () => (
+export const Accordion = ({ header, body }: Queries.AccordionFragment) => (
   <div className='space-y-4'>
     <details className='group [&_summary::-webkit-details-marker]:hidden' open>
       <summary className='flex cursor-pointer items-center justify-between rounded-lg bg-gray-50 p-4'>
-        <h3 className='text-lg font-medium text-gray-900'>
-          Lorem ipsum dolor sit amet consectetur adipisicing?
-        </h3>
+        <h3 className='text-lg font-medium text-gray-900'>{header}</h3>
 
         <svg
           className='ml-1.5 h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180'
@@ -23,13 +26,12 @@ export const Accordion = () => (
           />
         </svg>
       </summary>
-
-      <p className='mt-4 px-4 leading-relaxed text-gray-700'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-        veritatis molestias culpa in, recusandae laboriosam neque aliquid libero
-        nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio
-        corporis earum similique!
-      </p>
+      {body
+        ? renderRichText(
+            body as RenderRichTextData<ContentfulRichTextGatsbyReference>
+          )
+        : null}
+      {/* <p className='mt-4 px-4 leading-relaxed text-gray-700'>{body}</p> */}
     </details>
   </div>
 );

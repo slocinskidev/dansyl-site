@@ -29,7 +29,13 @@ const HomePage = ({
         }}
       />
       <OpinionList />
-      <Faq />
+      <Faq
+        {...{
+          heading: contentfulHomePage?.faq?.heading ?? null,
+          list: contentfulHomePage?.faq?.list ?? null,
+          image: contentfulHomePage?.faq?.image ?? null,
+        }}
+      />
     </Layout>
   );
 };
@@ -44,6 +50,9 @@ export const query = graphql`
       }
       carRentList {
         ...CarRentList
+      }
+      faq {
+        ...Faq
       }
     }
   }

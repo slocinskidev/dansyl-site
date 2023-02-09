@@ -30,5 +30,25 @@ export const query = graphql`
     price
     seats
     year(formatString: "YYYY")
+    gallery {
+      ...Image
+    }
+  }
+
+  fragment Faq on ContentfulFaq {
+    heading
+    list {
+      ...Accordion
+    }
+    image {
+      ...Image
+    }
+  }
+
+  fragment Accordion on ContentfulAccordion {
+    header
+    body {
+      raw
+    }
   }
 `;

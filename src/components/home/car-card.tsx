@@ -17,16 +17,16 @@ export const CarCard = ({
   gear,
   seats,
   year,
+  gallery,
 }: Queries.CarCardFragment) => (
   <button
     type='button'
     className='block rounded-lg p-4 text-left shadow-sm shadow-indigo-100 transition-shadow hover:shadow-lg'
     onClick={() => {
-      NiceModal.show('car-rent-modal', { name, price });
+      NiceModal.show('car-rent-modal', { name, price, gallery });
     }}
   >
     {image ? <Image className='rounded-lg' {...image} /> : null}
-    <ModalDef id='car-rent-modal' component={CarRentModal} />
     <div className='mt-4'>
       <dl>
         <div>
@@ -102,6 +102,8 @@ export const CarCard = ({
             </div>
           </li>
         ) : null}
+
+        <ModalDef id='car-rent-modal' component={CarRentModal} />
       </ul>
     </div>
   </button>
