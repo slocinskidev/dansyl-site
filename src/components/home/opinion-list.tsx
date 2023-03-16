@@ -22,7 +22,7 @@ const OpinionList = () => (
           <div className='hidden lg:mt-8 lg:flex lg:gap-4'>
             <button
               type='button'
-              className='prev-button rounded-full border border-pelorous-600 p-3 text-pelorous-600 hover:bg-pelorous-900 hover:text-white'
+              className='prev-button rounded-full border border-lochmara-600 p-3 text-lochmara-600 hover:bg-lochmara-900 hover:text-white'
             >
               <span className='sr-only'>Previous Slide</span>
               <svg
@@ -43,7 +43,7 @@ const OpinionList = () => (
 
             <button
               type='button'
-              className='next-button rounded-full border border-pelorous-600 p-3 text-pelorous-600 hover:bg-pelorous-900 hover:text-white'
+              className='next-button rounded-full border border-lochmara-600 p-3 text-lochmara-600 hover:bg-lochmara-900 hover:text-white'
             >
               <span className='sr-only'>Next Slide</span>
               <svg
@@ -125,7 +125,7 @@ const OpinionList = () => (
                   </div>
 
                   <div className='mt-4'>
-                    <p className='text-2xl font-bold text-pelorous-900 sm:text-3xl'>
+                    <p className='text-2xl font-bold text-lochmara-900 sm:text-3xl'>
                       Imię i nazwisko
                     </p>
 
@@ -195,7 +195,7 @@ const OpinionList = () => (
                   </div>
 
                   <div className='mt-4'>
-                    <p className='text-2xl font-bold text-pelorous-900 sm:text-3xl'>
+                    <p className='text-2xl font-bold text-lochmara-900 sm:text-3xl'>
                       Imię i nazwisko
                     </p>
 
@@ -265,7 +265,7 @@ const OpinionList = () => (
                   </div>
 
                   <div className='mt-4'>
-                    <p className='text-2xl font-bold text-pelorous-900 sm:text-3xl'>
+                    <p className='text-2xl font-bold text-lochmara-900 sm:text-3xl'>
                       Imię i nazwisko
                     </p>
 
@@ -291,7 +291,7 @@ const OpinionList = () => (
         <button
           type='button'
           aria-label='Previous slide'
-          className='prev-button rounded-full border border-pelorous-600 p-4 text-pelorous-600 hover:bg-pelorous-900 hover:text-white'
+          className='prev-button rounded-full border border-lochmara-600 p-4 text-lochmara-600 hover:bg-lochmara-900 hover:text-white'
         >
           <svg
             className='h-5 w-5 -rotate-180'
@@ -312,7 +312,7 @@ const OpinionList = () => (
         <button
           type='button'
           aria-label='Next slide'
-          className='next-button rounded-full border border-pelorous-600 p-4 text-pelorous-600 hover:bg-pelorous-900 hover:text-white'
+          className='next-button rounded-full border border-lochmara-600 p-4 text-lochmara-600 hover:bg-lochmara-900 hover:text-white'
         >
           <svg
             className='h-5 w-5'

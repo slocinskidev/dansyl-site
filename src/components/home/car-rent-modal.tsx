@@ -62,10 +62,10 @@ export const CarRentModal = NiceModal.create(
           )}
         >
           <div className='flex items-start gap-4'>
-            <GiKeyCard className='h-12 w-12 shrink-0 text-pelorous-600' />
+            <GiKeyCard className='h-12 w-12 shrink-0 text-lochmara-600' />
 
             <div className='flex-1'>
-              <strong className='block font-medium text-pelorous-900'>
+              <strong className='block font-medium text-lochmara-900'>
                 {`Zostało wybrane auto ${name}`}
               </strong>
 

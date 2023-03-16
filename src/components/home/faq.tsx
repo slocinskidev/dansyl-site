@@ -5,7 +5,7 @@ import { Accordion, Image } from '@/components/commons';
 export const Faq = ({ heading, list, image }: Queries.FaqFragment) => (
   <section className='mx-auto my-20 grid max-w-screen-xl items-start gap-8 px-4 lg:grid-cols-2'>
     {heading ? (
-      <h2 className='col-span-full text-pelorous-900'>{heading}</h2>
+      <h2 className='col-span-full text-lochmara-900'>{heading}</h2>
     ) : null}
 
     {list?.length ? (

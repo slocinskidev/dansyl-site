@@ -24,6 +24,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@contentful/rich-text-types": "^16.0.2",
     "@ebay/nice-modal-react": "^1.2.8",
     "@loadable/webpack-plugin": "^5.15.2",
     "@react-icons/all-files": "^4.1.0",

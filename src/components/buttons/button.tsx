@@ -9,23 +9,31 @@ type ButtonProps = {
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { children, className, disabled, ariaLabel, type = 'button', variant = 'solid', ...rest },
-    ref,
+    {
+      children,
+      className,
+      disabled,
+      ariaLabel,
+      type = 'button',
+      variant = 'solid',
+      ...rest
+    },
+    ref
   ) => (
     <button
       // eslint-disable-next-line react/button-has-type
       {...{ type, ref, 'aria-label': ariaLabel }}
       className={clsxm(
-        'inline-block rounded border h-fit w-fit',
+        'inline-block h-fit w-fit rounded border',
         variant === 'solid' &&
-          'border-pelorous-600 bg-pelorous-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pelorous-600 focus:outline-none focus:ring active:text-pelorous-500',
+          'border-lochmara-600 bg-lochmara-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-lochmara-600 focus:outline-none focus:ring active:text-lochmara-500',
         variant === 'outline' &&
-          'border-pelorous-600 px-12 py-3 text-sm font-medium text-pelorous-600 hover:bg-pelorous-600 hover:text-white focus:outline-none focus:ring active:bg-pelorous-500',
-        className,
+          'border-lochmara-600 px-12 py-3 text-sm font-medium text-lochmara-600 hover:bg-lochmara-600 hover:text-white focus:outline-none focus:ring active:bg-lochmara-500',
+        className
       )}
       {...rest}
     >
       {children}
     </button>
-  ),
+  )
 );

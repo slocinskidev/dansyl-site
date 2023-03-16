@@ -7,7 +7,7 @@ export const CarRentList = ({
   carList,
 }: Queries.CarRentListFragment) => (
   <section className='mx-auto my-20 grid max-w-screen-xl gap-8 px-4'>
-    {heading ? <h2 className='text-pelorous-900'>{heading}</h2> : null}
+    {heading ? <h2 className='text-lochmara-900'>{heading}</h2> : null}
 
     {carList?.length ? (
       <ul className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>

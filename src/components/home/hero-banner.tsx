@@ -20,7 +20,7 @@ export const HeroBanner = ({
       ) : null}
       <div className='grid gap-4 lg:gap-10'>
         {heading ? (
-          <h1 className='text-3xl leading-tight text-pelorous-900 md:text-5xl md:leading-snug'>
+          <h1 className='text-3xl leading-tight text-lochmara-900 md:text-5xl md:leading-snug'>
             Bezgotówkowe naprawy z OC i AC
           </h1>
         ) : null}

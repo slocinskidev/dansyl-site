@@ -6,21 +6,27 @@ import { MdCarRepair } from 'react-icons/md';
 import PaintSpray from '@/assets/icons/paint-spray.svg';
 
 const WhyUs = () => (
-  <section className='bg-pelorous-900 text-white'>
+  <section className='bg-lochmara-900 text-white'>
     <div className='mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
       <div className='max-w-xl'>
         <h2 className='text-3xl font-bold sm:text-4xl'>Dlaczego my?</h2>
 
         <p className='mt-4 text-gray-300'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-          dolores iure fugit totam iste obcaecati. Consequatur ipsa quod ipsum
-          sequi culpa delectus, cumque id tenetur quibusdam, quos fuga minima.
+          Jesteśmy warsztatem posiadającym ogromny staż w swoim fachu,
+          podejmujemy się każdej pracy i wykonujemy ją sumiennie, każde auto,
+          które do nas trafia jest traktowane jak nasze własne podczas
+          wykonywanych usług zabezpieczamy środek auta przed jakimikolwiek
+          zabrudzeniami, dodatkowo przed oddaniem pojazdu sprzątamy go dokładnie
+          wewnątrz i zewnątrz jesteśmy zaufanym warsztatem, który współpracuje z
+          dużą ilością ubezpieczalni, dla dwóch z nich jesteśmy zakładem
+          partnerskim w tym rejonie, staramy się, aby każdy klient był
+          usatysfakcjonowany z naszej pracy.
         </p>
       </div>
 
       <div className='mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3'>
         <div className='flex items-start'>
-          <span className='shrink-0 rounded-lg bg-pelorous-800 p-4'>
+          <span className='shrink-0 rounded-lg bg-lochmara-800 p-4'>
             <PaintSpray className='h-5 w-5' />
           </span>
 
@@ -38,7 +44,7 @@ const WhyUs = () => (
         </div>
 
         <div className='flex items-start'>
-          <span className='shrink-0 rounded-lg bg-pelorous-800 p-4'>
+          <span className='shrink-0 rounded-lg bg-lochmara-800 p-4'>
             <GiAutoRepair className='h-5 w-5' />
           </span>
 
@@ -53,7 +59,7 @@ const WhyUs = () => (
         </div>
 
         <div className='flex items-start'>
-          <span className='shrink-0 rounded-lg bg-pelorous-800 p-4'>
+          <span className='shrink-0 rounded-lg bg-lochmara-800 p-4'>
             <MdCarRepair className='h-5 w-5' />
           </span>
 
@@ -69,7 +75,7 @@ const WhyUs = () => (
         </div>
 
         <div className='flex items-start'>
-          <span className='shrink-0 rounded-lg bg-pelorous-800 p-4'>
+          <span className='shrink-0 rounded-lg bg-lochmara-800 p-4'>
             <FaCarSide className='h-5 w-5' />
           </span>
 
@@ -86,7 +92,7 @@ const WhyUs = () => (
         </div>
 
         <div className='flex items-start'>
-          <span className='shrink-0 rounded-lg bg-pelorous-800 p-4'>
+          <span className='shrink-0 rounded-lg bg-lochmara-800 p-4'>
             <svg
               className='h-5 w-5'
               fill='none'
@@ -117,7 +123,7 @@ const WhyUs = () => (
         </div>
 
         <div className='flex items-start'>
-          <span className='shrink-0 rounded-lg bg-pelorous-800 p-4'>
+          <span className='shrink-0 rounded-lg bg-lochmara-800 p-4'>
             <svg
               className='h-5 w-5'
               fill='none'

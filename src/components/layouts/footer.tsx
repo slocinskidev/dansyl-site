@@ -45,7 +45,7 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
             <li>
               <UnstyledLink
                 href={facebook ?? '/'}
-                className='text-gray-700 transition-colors hover:text-pelorous-600'
+                className='text-gray-700 transition-colors hover:text-lochmara-600'
               >
                 <span className='sr-only'>Facebook</span>
 
@@ -56,7 +56,7 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
             <li>
               <UnstyledLink
                 href={`mailto:${email}`}
-                className='text-gray-700 transition-colors hover:text-pelorous-600'
+                className='text-gray-700 transition-colors hover:text-lochmara-600'
               >
                 <span className='sr-only'>Email</span>
 

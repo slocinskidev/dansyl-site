@@ -45,7 +45,7 @@ export const CarCard = ({
       <ul className='mt-6 flex flex-wrap items-center gap-5 text-xs'>
         {engine ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
-            <TbEngine className='text-pelorous-900' />
+            <TbEngine className='text-lochmara-900' />
 
             <div className='mt-1.5 sm:ml-3 sm:mt-0'>
               <p className='text-gray-500'>Silnik</p>
@@ -57,7 +57,7 @@ export const CarCard = ({
 
         {year ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
-            <RxCalendar className='text-pelorous-900' />
+            <RxCalendar className='text-lochmara-900' />
 
             <div className='mt-1.5 sm:ml-3 sm:mt-0'>
               <p className='text-gray-500'>Rocznik</p>
@@ -69,7 +69,7 @@ export const CarCard = ({
 
         {gear ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
-            <TbManualGearbox className='text-pelorous-900' />
+            <TbManualGearbox className='text-lochmara-900' />
 
             <div className='mt-1.5 sm:ml-3 sm:mt-0'>
               <p className='text-gray-500'>Skrzynia biegów</p>
@@ -81,7 +81,7 @@ export const CarCard = ({
 
         {seats ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
-            <GiCarSeat className='text-pelorous-900' />
+            <GiCarSeat className='text-lochmara-900' />
 
             <div className='mt-1.5 sm:ml-3 sm:mt-0'>
               <p className='text-gray-500'>Ilość miejsc</p>
@@ -93,7 +93,7 @@ export const CarCard = ({
 
         {fuel ? (
           <li className='sm:inline-flex sm:shrink-0 sm:items-center'>
-            <FuelIcon className='h-3 w-3 text-pelorous-900' />
+            <FuelIcon className='h-3 w-3 text-lochmara-900' />
 
             <div className='mt-1.5 sm:ml-3 sm:mt-0'>
               <p className='text-gray-500'>Paliwo</p>
