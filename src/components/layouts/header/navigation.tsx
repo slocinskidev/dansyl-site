@@ -39,7 +39,7 @@ export const Navigation = ({
           {navListWithoutHighlight.map((listItem) =>
             listItem?.pageName && listItem?.slug ? (
               <li key={listItem?.id}>
-                <UnderlineLink href={listItem.slug} className='py-4'>
+                <UnderlineLink href={listItem.slug} childrenClassName='py-4'>
                   {listItem.pageName}
                 </UnderlineLink>
               </li>

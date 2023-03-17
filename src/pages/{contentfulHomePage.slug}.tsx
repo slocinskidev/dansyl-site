@@ -28,7 +28,13 @@ const HomePage = ({
           secondButton: contentfulHomePage?.heroBanner?.secondButton ?? null,
         }}
       />
-      <WhyUs />
+      <WhyUs
+        {...{
+          heading: contentfulHomePage?.whyUs?.heading ?? null,
+          list: contentfulHomePage?.whyUs?.list ?? null,
+          more: contentfulHomePage?.whyUs?.more ?? null,
+        }}
+      />
       <CarRentList
         {...{
           heading: contentfulHomePage?.carRentList?.heading ?? null,
@@ -55,6 +61,9 @@ export const query = graphql`
     contentfulHomePage {
       heroBanner {
         ...HeroBanner
+      }
+      whyUs {
+        ...WhyUs
       }
       carRentList {
         ...CarRentList

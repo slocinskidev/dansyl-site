@@ -73,7 +73,31 @@ export const query = graphql`
           pageName
           slug
         }
+        ... on ContentfulAboutUsPage {
+          id
+          pageName
+          slug
+        }
       }
+    }
+  }
+
+  fragment WhyUs on ContentfulWhyUs {
+    heading
+    more {
+      ...ButtonLink
+    }
+    list {
+      ...WhyUsCard
+    }
+  }
+
+  fragment WhyUsCard on ContentfulWhyUsCard {
+    heading
+    icon
+    id
+    description {
+      description
     }
   }
 `;

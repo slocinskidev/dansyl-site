@@ -4,6 +4,7 @@ import { clsxm } from '@/lib';
 
 type UnderlineButtonType = {
   ariaLabel?: string;
+  childrenClassName?: string;
 } & React.ComponentPropsWithRef<'button'>;
 
 export const UnderlineButton = React.forwardRef<
@@ -11,7 +12,15 @@ export const UnderlineButton = React.forwardRef<
   UnderlineButtonType
 >(
   (
-    { children, className, disabled, ariaLabel, type = 'button', ...rest },
+    {
+      children,
+      className,
+      disabled,
+      ariaLabel,
+      type = 'button',
+      childrenClassName,
+      ...rest
+    },
     ref
   ) => (
     <button
@@ -19,11 +28,12 @@ export const UnderlineButton = React.forwardRef<
       {...{ type, ref, ariaLabel }}
       className={clsxm(
         'relative font-medium text-lochmara-600',
-        'before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-lochmara-600 before:transition hover:before:scale-100'
+        'before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-current before:transition hover:before:scale-100',
+        className
       )}
       {...rest}
     >
-      <span className={clsxm(className)}>{children}</span>
+      <span className={clsxm(childrenClassName)}>{children}</span>
     </button>
   )
 );
