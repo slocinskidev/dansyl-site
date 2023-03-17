@@ -24,6 +24,8 @@ const HomePage = ({
           heading: contentfulHomePage?.heroBanner?.heading ?? null,
           description: contentfulHomePage?.heroBanner?.description ?? null,
           image: contentfulHomePage?.heroBanner?.image ?? null,
+          firstButton: contentfulHomePage?.heroBanner?.firstButton ?? null,
+          secondButton: contentfulHomePage?.heroBanner?.secondButton ?? null,
         }}
       />
       <WhyUs />

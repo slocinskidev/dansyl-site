@@ -12,16 +12,18 @@ export const HeroBanner = ({
   heading,
   description,
   image,
+  firstButton,
+  secondButton,
 }: Queries.HeroBannerFragment) => (
-  <div className='relative mx-auto grid place-items-center gap-14 bg-gray-100 py-20 px-4'>
-    <div className='mx-auto grid max-w-screen-xl place-items-center gap-14 px-4 lg:grid-cols-2'>
+  <div className='relative mx-auto grid place-items-center gap-14 bg-gray-100 px-4 pt-10 pb-20 lg:py-20'>
+    <div className='mx-auto grid max-w-screen-xl place-items-center gap-14 lg:grid-cols-2'>
       {image ? (
         <Image className='rounded-lg md:h-[600px] lg:order-1' {...image} />
       ) : null}
       <div className='grid gap-4 lg:gap-10'>
         {heading ? (
           <h1 className='text-3xl leading-tight text-lochmara-900 md:text-5xl md:leading-snug'>
-            Bezgotówkowe naprawy z OC i AC
+            {heading}
           </h1>
         ) : null}
         {description
@@ -30,10 +32,28 @@ export const HeroBanner = ({
             )
           : null}
         <div className='mt-6 flex flex-wrap justify-center gap-4 md:justify-start'>
-          <ButtonLink href='/'>Sprawdź naszą ofertę</ButtonLink>
-          <ButtonLink variant='outline' href='/'>
-            Najczęściej zadawane pytania
-          </ButtonLink>
+          {firstButton?.label &&
+          firstButton?.ariaLabel &&
+          firstButton?.link?.contentfulinternal?.slug ? (
+            <ButtonLink
+              href={firstButton.link.contentfulinternal.slug}
+              ariaLabel={firstButton.ariaLabel}
+            >
+              {firstButton.label}
+            </ButtonLink>
+          ) : null}
+
+          {secondButton?.label &&
+          secondButton?.ariaLabel &&
+          secondButton?.link?.contentfulinternal?.slug ? (
+            <ButtonLink
+              variant='outline'
+              href={secondButton.link.contentfulinternal.slug}
+              ariaLabel={secondButton.ariaLabel}
+            >
+              {secondButton.label}
+            </ButtonLink>
+          ) : null}
         </div>
       </div>
     </div>

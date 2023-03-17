@@ -9,6 +9,12 @@ export const query = graphql`
     image {
       ...Image
     }
+    firstButton {
+      ...ButtonLink
+    }
+    secondButton {
+      ...ButtonLink
+    }
   }
 
   fragment CarRentList on ContentfulCarRentList {
@@ -49,6 +55,25 @@ export const query = graphql`
     header
     body {
       raw
+    }
+  }
+
+  fragment ButtonLink on ContentfulButtonLink {
+    label
+    ariaLabel
+    link {
+      contentfulinternal {
+        ... on ContentfulFaqPage {
+          id
+          pageName
+          slug
+        }
+        ... on ContentfulOfferPage {
+          id
+          pageName
+          slug
+        }
+      }
     }
   }
 `;

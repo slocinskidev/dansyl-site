@@ -19,7 +19,7 @@ export const ButtonLink = <T extends unknown>({
   <UnstyledLink
     {...rest}
     className={clsxm(
-      'inline-block h-fit w-fit rounded border',
+      'inline-block h-fit w-fit rounded border text-center',
       variant === 'solid' &&
         'border-lochmara-600 bg-lochmara-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-lochmara-600 focus:outline-none focus:ring active:text-lochmara-500',
       variant === 'outline' &&
