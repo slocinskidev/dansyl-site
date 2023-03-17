@@ -7,7 +7,7 @@ import { UnderlineLink, UnstyledLink } from '@/components/links';
 
 export type FooterType = {
   image?: Queries.ImageFragment;
-} & Pick<Queries.ContentfulBrandFragment, 'phone' | 'email' | 'facebook'>;
+} & Pick<Queries.BrandFragment, 'phone' | 'email' | 'facebook'>;
 
 export const Footer = ({ image, phone, email, facebook }: FooterType) => (
   <footer aria-label='Stopka' className='mx-auto max-w-screen-2xl bg-white'>

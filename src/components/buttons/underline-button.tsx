@@ -19,12 +19,11 @@ export const UnderlineButton = React.forwardRef<
       {...{ type, ref, ariaLabel }}
       className={clsxm(
         'relative font-medium text-lochmara-600',
-        'before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-lochmara-600 before:transition hover:before:scale-100',
-        className
+        'before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-lochmara-600 before:transition hover:before:scale-100'
       )}
       {...rest}
     >
-      {children}
+      <span className={clsxm(className)}>{children}</span>
     </button>
   )
 );

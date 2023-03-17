@@ -5,16 +5,19 @@ import React from 'react';
 import { Footer, Header } from '@/components/layouts';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { contentfulBrand, contentfulFooter } =
-    useStaticQuery<Queries.BrandQuery>(graphql`
-      query Brand {
+  const { contentfulBrand, contentfulFooter, contentfulNavigation } =
+    useStaticQuery<Queries.LayoutQuery>(graphql`
+      query Layout {
         contentfulBrand {
-          ...ContentfulBrand
+          ...Brand
         }
         contentfulFooter {
           image {
             ...Image
           }
+        }
+        contentfulNavigation {
+          ...Navigation
         }
       }
     `);
@@ -24,8 +27,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <a href='#main' className='jump-to-content'>
         Przejdź do głównej treści strony
       </a>
-      {contentfulBrand?.logo ? (
-        <Header {...{ logo: contentfulBrand?.logo }} />
+      {contentfulBrand?.logo && contentfulNavigation ? (
+        <Header
+          {...{ logo: contentfulBrand?.logo, navigation: contentfulNavigation }}
+        />
       ) : null}
       <main id='main'>{children}</main>
       <Footer

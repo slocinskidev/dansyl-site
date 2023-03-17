@@ -1,3 +1,4 @@
-export * from './accordion';
-export * from './image';
-export * from './rich-text';
+export { Accordion } from './accordion';
+export { Image } from './image';
+export { Overlay } from './overlay';
+export { RichText } from './rich-text';

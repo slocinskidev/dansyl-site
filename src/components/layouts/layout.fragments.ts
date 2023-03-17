@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  fragment ContentfulBrand on ContentfulBrand {
+  fragment Brand on ContentfulBrand {
     logo {
       ...Image
     }
@@ -14,5 +14,45 @@ export const query = graphql`
     email
     phone
     facebook
+  }
+
+  fragment Navigation on ContentfulNavigation {
+    list {
+      ... on ContentfulAboutUsPage {
+        id
+        slug
+        pageName
+      }
+      ... on ContentfulCarRentPage {
+        id
+        slug
+        pageName
+      }
+      ... on ContentfulContactPage {
+        id
+        slug
+        pageName
+      }
+      ... on ContentfulFaqPage {
+        id
+        slug
+        pageName
+      }
+      ... on ContentfulOfferPage {
+        id
+        slug
+        pageName
+      }
+      ... on ContentfulProjectPage {
+        id
+        slug
+        pageName
+      }
+    }
+    highlightItem {
+      id
+      slug
+      pageName
+    }
   }
 `;

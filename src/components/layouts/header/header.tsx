@@ -1,57 +1,51 @@
 import React from 'react';
 
-import { Image } from '@/components/commons/image';
-import { ButtonLink, UnderlineLink, UnstyledLink } from '@/components/links';
+import { Image, Overlay } from '@/components/commons';
+import { Hamburger, Navigation } from '@/components/layouts/header';
+import { UnstyledLink } from '@/components/links';
+import { useScreen, useToggle } from '@/hooks';
+import { clsxm } from '@/lib';
 
 export type HeaderType = {
   logo: Queries.ImageFragment;
+  navigation: Queries.NavigationFragment;
 };
 
-export const Header = ({ logo }: HeaderType) => (
-  <header aria-label='Site Header' className='bg-white'>
-    <div className='mx-auto max-w-screen-xl px-4'>
-      <div className='flex h-16 items-center justify-between'>
-        <div className='md:flex md:items-center md:gap-12'>
-          <UnstyledLink href='/'>
-            <span className='sr-only'>Strona główna</span>
-            <Image {...logo} className='w-40' />
-          </UnstyledLink>
-        </div>
+export const Header = ({ logo, navigation }: HeaderType) => {
+  const [isOpen, toggleIsOpen] = useToggle(false);
+  const { isDesktop } = useScreen();
 
-        <div className='hidden md:block'>
-          <nav aria-label='Główna nawigacja'>
-            <ul className='flex items-center gap-6 text-sm'>
-              <li>
-                <UnderlineLink href='/'>O Nas</UnderlineLink>
-              </li>
+  const isMobileAndOpen = !isDesktop && isOpen;
 
-              <li>
-                <UnderlineLink href='/'>Oferta</UnderlineLink>
-              </li>
+  return (
+    <>
+      <Overlay
+        {...{ isOpen: isMobileAndOpen, handler: toggleIsOpen }}
+        className='z-10'
+      />
+      <header
+        aria-label='Site Header'
+        className='sticky top-0 z-10 bg-white shadow-sm'
+      >
+        <div className='mx-auto max-w-screen-xl px-4'>
+          <div
+            className={clsxm(
+              'flex h-16 items-center justify-between',
+              isMobileAndOpen && 'lg:justify-center'
+            )}
+          >
+            <UnstyledLink href='/'>
+              {/* TODO: this text should come from CMS */}
+              <span className='sr-only'>Strona główna</span>
+              <Image {...logo} className='w-40' />
+            </UnstyledLink>
 
-              <li>
-                <UnderlineLink href='/'>Wynajem aut</UnderlineLink>
-              </li>
+            <Hamburger {...{ isOpen, toggleIsOpen }} />
 
-              <li>
-                <UnderlineLink href='/'>Realizacje</UnderlineLink>
-              </li>
-
-              <li>
-                <UnderlineLink href='/'>Pytania i odpowiedzi</UnderlineLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div className='flex items-center gap-4'>
-          <div className='sm:flex sm:gap-4'>
-            <div className='hidden sm:flex'>
-              <ButtonLink href='/'>Kontakt</ButtonLink>
-            </div>
+            <Navigation {...navigation} {...{ isOpen }} />
           </div>
         </div>
-      </div>
-    </div>
-  </header>
-);
+      </header>
+    </>
+  );
+};
