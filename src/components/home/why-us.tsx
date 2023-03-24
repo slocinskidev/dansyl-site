@@ -1,16 +1,15 @@
 import React from 'react';
 
+import { Typography } from '@/components/commons';
 import { WhyUsCard } from '@/components/home/why-us-card';
-import { UnderlineLink } from '@/components/links';
+import { ButtonLink } from '@/components/links';
 
 interface WhyUsProps extends Queries.WhyUsFragment {}
 
 const WhyUs = ({ heading, list, more }: WhyUsProps) => (
   <section className='bg-lochmara-900 px-4 text-white'>
     <div className='mx-auto max-w-screen-xl py-20'>
-      {heading ? (
-        <h2 className='max-w-xl text-3xl font-bold sm:text-4xl'>{heading}</h2>
-      ) : null}
+      {heading ? <Typography as='h2'>{heading}</Typography> : null}
 
       {list?.length ? (
         <ul className='mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3'>
@@ -25,12 +24,13 @@ const WhyUs = ({ heading, list, more }: WhyUsProps) => (
       ) : null}
 
       {more?.label && more.link?.contentfulinternal?.slug ? (
-        <UnderlineLink
+        <ButtonLink
+          variant='outline'
           href={more.link.contentfulinternal.slug}
           className='mx-auto mt-10 block text-white'
         >
           {more.label}
-        </UnderlineLink>
+        </ButtonLink>
       ) : null}
     </div>
   </section>

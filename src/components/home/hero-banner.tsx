@@ -5,7 +5,7 @@ import {
 } from 'gatsby-source-contentful/rich-text';
 import React from 'react';
 
-import { Image } from '@/components/commons';
+import { Image, Typography } from '@/components/commons';
 import { ButtonLink } from '@/components/links';
 
 export const HeroBanner = ({
@@ -22,9 +22,9 @@ export const HeroBanner = ({
       ) : null}
       <div className='grid gap-4 lg:gap-10'>
         {heading ? (
-          <h1 className='text-3xl leading-tight text-lochmara-900 md:text-5xl md:leading-snug'>
+          <Typography as='h1' variant='heading1' className='text-lochmara-900'>
             {heading}
-          </h1>
+          </Typography>
         ) : null}
         {description
           ? renderRichText(

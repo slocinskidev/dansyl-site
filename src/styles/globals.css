@@ -55,3 +55,17 @@
     transform: translateY(0);
   }
 }
+
+@layer components {
+  .car-rent-slider {
+    --swiper-theme-color: #fff;
+  }
+
+  .car-rent-thumb-slider .swiper-slide .gatsby-image-wrapper {
+    border: 5px solid transparent;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) color 0.3s;
+  }
+  .car-rent-thumb-slider .swiper-slide-thumb-active .gatsby-image-wrapper {
+    border-color: #0b4c6f;
+  }
+}

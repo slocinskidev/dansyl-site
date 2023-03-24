@@ -4,6 +4,7 @@ import { GiAutoRepair } from 'react-icons/gi';
 import { MdCarRepair } from 'react-icons/md';
 
 import PaintSpray from '@/assets/icons/paint-spray.svg';
+import { Typography } from '@/components/commons';
 
 type IconNames = 'paint-spray' | 'auto-repair' | 'car-repair' | 'car-side';
 
@@ -31,11 +32,11 @@ export const WhyUsCard = ({
     ) : null}
 
     <div className='ml-4'>
-      <h3 className='text-lg font-bold'>{heading}</h3>
+      <Typography as='h3'>{heading}</Typography>
 
-      <p className='mt-1 text-sm leading-normal text-gray-300'>
+      <Typography as='p' className='mt-2 text-gray-300'>
         {description?.description}
-      </p>
+      </Typography>
     </div>
   </div>
 );

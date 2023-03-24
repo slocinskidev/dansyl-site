@@ -17,14 +17,33 @@ export const query = graphql`
     }
   }
 
+  fragment ContentfulCarRentModal on ContentfulCarRentModal {
+    callUsLabel
+    choosenCarLabel
+    closeButtonInfo
+    description {
+      description
+    }
+  }
+
   fragment CarRentList on ContentfulCarRentList {
     heading
     carList {
       ...CarCard
     }
+    carNameLabel
+    engineLabel
+    fuelLabel
+    gearLabel
+    priceLabel
+    seatsLabel
+    yearLabel
+    modal {
+      ...ContentfulCarRentModal
+    }
   }
 
-  fragment CarCard on ContentfulCarCard {
+  fragment CarCard on ContentfulCarRentCard {
     image {
       ...Image
     }

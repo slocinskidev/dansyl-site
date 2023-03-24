@@ -39,6 +39,14 @@ const HomePage = ({
         {...{
           heading: contentfulHomePage?.carRentList?.heading ?? null,
           carList: contentfulHomePage?.carRentList?.carList ?? null,
+          carNameLabel: contentfulHomePage?.carRentList?.carNameLabel ?? null,
+          engineLabel: contentfulHomePage?.carRentList?.engineLabel ?? null,
+          fuelLabel: contentfulHomePage?.carRentList?.fuelLabel ?? null,
+          gearLabel: contentfulHomePage?.carRentList?.gearLabel ?? null,
+          priceLabel: contentfulHomePage?.carRentList?.priceLabel ?? null,
+          seatsLabel: contentfulHomePage?.carRentList?.seatsLabel ?? null,
+          yearLabel: contentfulHomePage?.carRentList?.yearLabel ?? null,
+          modal: contentfulHomePage?.carRentList?.modal ?? null,
         }}
       />
       <OpinionList />
