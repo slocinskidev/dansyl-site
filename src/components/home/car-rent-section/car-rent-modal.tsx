@@ -97,7 +97,7 @@ export const CarRentModal = NiceModal.create(
           id='car-rent-modal'
           role='alert'
           className={clsxm(
-            'fixed top-1/2 left-1/2 z-50 h-fit max-h-[95vh] w-[95vw] max-w-screen-lg -translate-x-1/2 -translate-y-1/2 overflow-y-scroll rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-xl lg:w-[80vw] lg:p-8',
+            'fixed top-1/2 left-1/2 z-50 h-fit max-h-[95vh] w-[95vw] max-w-screen-lg -translate-x-1/2 -translate-y-1/2 overflow-y-scroll rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-xl lg:w-[80vw] lg:overflow-y-auto lg:p-8',
             modal.visible && 'opacity-100'
           )}
         >

@@ -16,7 +16,7 @@ export const CarRentList = ({
   yearLabel,
   modal,
 }: Queries.CarRentListFragment) => (
-  <section className='mx-auto my-20 grid max-w-screen-xl gap-8 px-4 md:gap-16'>
+  <section className='mx-auto my-20 grid max-w-screen-xl gap-8 px-4 md:gap-12'>
     {heading ? (
       <Typography as='h2' className='text-lochmara-900'>
         {heading}

@@ -3,6 +3,7 @@ import 'swiper/css';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Typography } from '@/components/commons';
 import { breakpoint } from '@/hooks';
 
 const OpinionList = () => (
@@ -10,11 +11,11 @@ const OpinionList = () => (
     <div className='mx-auto max-w-screen-xl px-4 py-16'>
       <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16'>
         <div className='max-w-xl text-center sm:text-left'>
-          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl'>
+          <Typography as='h2' className='text-lochmara-900'>
             Co piszą o nas klienci
-          </h2>
+          </Typography>
 
-          <p className='mt-4 text-gray-500'>
+          <p className='mt-4 text-gray-500 md:mt-8'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
             veritatis illo placeat harum porro optio fugit a culpa sunt id!
           </p>
@@ -77,7 +78,7 @@ const OpinionList = () => (
             <SwiperSlide className='swiper-slide'>
               <blockquote className='flex h-full flex-col justify-between bg-white p-12'>
                 <div>
-                  <div className='flex gap-0.5 text-green-500'>
+                  <div className='flex gap-0.5 text-lochmara-500'>
                     <svg
                       className='h-5 w-5'
                       fill='currentColor'
@@ -147,7 +148,7 @@ const OpinionList = () => (
             <SwiperSlide className='swiper-slide'>
               <blockquote className='flex h-full flex-col justify-between bg-white p-12'>
                 <div>
-                  <div className='flex gap-0.5 text-green-500'>
+                  <div className='flex gap-0.5 text-lochmara-500'>
                     <svg
                       className='h-5 w-5'
                       fill='currentColor'
@@ -217,7 +218,7 @@ const OpinionList = () => (
             <SwiperSlide className='swiper-slide'>
               <blockquote className='flex h-full flex-col justify-between bg-white p-12'>
                 <div>
-                  <div className='flex gap-0.5 text-green-500'>
+                  <div className='flex gap-0.5 text-lochmara-500'>
                     <svg
                       className='h-5 w-5'
                       fill='currentColor'
