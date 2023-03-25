@@ -42,7 +42,7 @@ export const CarRentModal = NiceModal.create(
     priceLabel,
     seatsLabel,
     yearLabel,
-  }: Omit<Queries.CarCardFragment, 'image'> &
+  }: Queries.CarCardFragment &
     Pick<
       Queries.CarRentListFragment,
       | 'engineLabel'

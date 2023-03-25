@@ -57,6 +57,7 @@ const elementTotypographyVariantClasses: Partial<
 > = {
   h1: typographyVariantClasses.heading1,
   h2: typographyVariantClasses.heading2,
+  h3: typographyVariantClasses.heading3,
   p: typographyVariantClasses.body1,
   span: typographyVariantClasses.custom,
 };

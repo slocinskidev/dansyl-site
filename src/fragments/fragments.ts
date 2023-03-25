@@ -44,9 +44,6 @@ export const query = graphql`
   }
 
   fragment CarCard on ContentfulCarRentCard {
-    image {
-      ...Image
-    }
     id
     gear
     fuel
@@ -118,5 +115,13 @@ export const query = graphql`
     description {
       description
     }
+  }
+
+  fragment ContentfulRecentProjects on ContentfulSingleProjectPage {
+    projectName
+    gallery {
+      ...Image
+    }
+    slug
   }
 `;

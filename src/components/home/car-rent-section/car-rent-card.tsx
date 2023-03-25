@@ -8,7 +8,6 @@ import { CarRentModal } from '@/components/home/car-rent-section/car-rent-modal'
 export const CarRentCard = ({
   name,
   price,
-  image,
   engine,
   fuel,
   gear,
@@ -48,7 +47,7 @@ export const CarRentCard = ({
       });
     }}
   >
-    {image ? <Image className='rounded-t-lg' {...image} /> : null}
+    {gallery?.[0] ? <Image className='rounded-t-lg' {...gallery[0]} /> : null}
     <div className='mt-4 p-4 md:p-8'>
       <dl>
         <div>
