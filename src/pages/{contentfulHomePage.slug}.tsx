@@ -39,6 +39,7 @@ const HomePage = ({
         seatsLabel: contentfulHomePage?.carRentList?.seatsLabel ?? null,
         yearLabel: contentfulHomePage?.carRentList?.yearLabel ?? null,
         modal: contentfulHomePage?.carRentList?.modal ?? null,
+        isSlider: true,
       }}
     />
     <OpinionList />

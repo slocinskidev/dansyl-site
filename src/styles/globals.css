@@ -68,4 +68,8 @@
   .car-rent-thumb-slider .swiper-slide-thumb-active .gatsby-image-wrapper {
     border-color: #0b4c6f;
   }
+
+  .car-rent-list-slider {
+    --swiper-theme-color: #0b4c6f;
+  }
 }
