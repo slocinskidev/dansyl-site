@@ -124,4 +124,11 @@ export const query = graphql`
     }
     slug
   }
+
+  fragment ContentfulPageBanner on ContentfulPageBanner {
+    heading
+    description {
+      raw
+    }
+  }
 `;

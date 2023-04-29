@@ -2,8 +2,8 @@ import NiceModal, { ModalDef } from '@ebay/nice-modal-react';
 import React from 'react';
 
 import { Image } from '@/components/commons';
-import CarCardProperty from '@/components/home/car-rent-section/car-rent-card-property';
-import { CarRentModal } from '@/components/home/car-rent-section/car-rent-modal';
+import CarCardProperty from '@/components/commons/car-rent-section/car-rent-card-property';
+import { CarRentModal } from '@/components/commons/car-rent-section/car-rent-modal';
 
 export const CarRentCard = ({
   name,

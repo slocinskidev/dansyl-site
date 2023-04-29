@@ -20,7 +20,7 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Image } from '@/components/commons';
-import CarCardProperty from '@/components/home/car-rent-section/car-rent-card-property';
+import CarCardProperty from '@/components/commons/car-rent-section/car-rent-card-property';
 import { UnderlineLink } from '@/components/links';
 import { breakpoint } from '@/hooks/use-screen';
 import { clsxm } from '@/lib';

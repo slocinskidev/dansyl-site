@@ -1,14 +1,31 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 
-import { Typography } from '@/components/commons';
+import { CarRentList, PageBanner } from '@/components/commons';
 import { Layout } from '@/components/layouts';
 
 const CarRentPage = ({
   data: { contentfulCarRentPage },
 }: PageProps<Queries.CarRentPageQuery>) => (
   <Layout>
-    <Typography as='h1'>{contentfulCarRentPage?.pageName}</Typography>
+    <PageBanner
+      heading={contentfulCarRentPage?.banner?.heading ?? null}
+      description={contentfulCarRentPage?.banner?.description ?? null}
+    />
+    <CarRentList
+      {...{
+        heading: contentfulCarRentPage?.carRentList?.heading ?? null,
+        carList: contentfulCarRentPage?.carRentList?.carList ?? null,
+        carNameLabel: contentfulCarRentPage?.carRentList?.carNameLabel ?? null,
+        engineLabel: contentfulCarRentPage?.carRentList?.engineLabel ?? null,
+        fuelLabel: contentfulCarRentPage?.carRentList?.fuelLabel ?? null,
+        gearLabel: contentfulCarRentPage?.carRentList?.gearLabel ?? null,
+        priceLabel: contentfulCarRentPage?.carRentList?.priceLabel ?? null,
+        seatsLabel: contentfulCarRentPage?.carRentList?.seatsLabel ?? null,
+        yearLabel: contentfulCarRentPage?.carRentList?.yearLabel ?? null,
+        modal: contentfulCarRentPage?.carRentList?.modal ?? null,
+      }}
+    />
   </Layout>
 );
 
@@ -18,6 +35,12 @@ export const query = graphql`
   query CarRentPage {
     contentfulCarRentPage {
       pageName
+      banner {
+        ...ContentfulPageBanner
+      }
+      carRentList {
+        ...CarRentList
+      }
     }
   }
 `;
