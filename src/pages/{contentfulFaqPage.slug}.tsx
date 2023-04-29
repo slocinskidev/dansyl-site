@@ -1,14 +1,19 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 
-import { Typography } from '@/components/commons';
+import { PageBanner } from '@/components/commons';
+import { FaqList } from '@/components/faq/faq-list';
 import { Layout } from '@/components/layouts';
 
 const FaqPage = ({
   data: { contentfulFaqPage },
 }: PageProps<Queries.FaqPageQuery>) => (
   <Layout>
-    <Typography as='h1'>{contentfulFaqPage?.pageName}</Typography>
+    <PageBanner
+      heading={contentfulFaqPage?.banner?.heading ?? null}
+      description={contentfulFaqPage?.banner?.description ?? null}
+    />
+    <FaqList list={contentfulFaqPage?.list as Queries.AccordionFragment[]} />
   </Layout>
 );
 
@@ -18,6 +23,12 @@ export const query = graphql`
   query FaqPage {
     contentfulFaqPage {
       pageName
+      banner {
+        ...ContentfulPageBanner
+      }
+      list {
+        ...Accordion
+      }
     }
   }
 `;
