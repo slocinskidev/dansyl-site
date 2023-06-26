@@ -66,7 +66,7 @@ export const CarRentCard = ({
       <ul className='mt-6 flex flex-wrap items-center gap-8 text-xs md:gap-5'>
         {engine ? (
           <CarCardProperty
-            {...{ label: engineLabel ?? '', value: engine, icon: 'enigne' }}
+            {...{ label: engineLabel ?? '', value: engine, icon: 'engine' }}
           />
         ) : null}
 

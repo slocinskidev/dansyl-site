@@ -2,7 +2,12 @@ import React from 'react';
 
 import { clsxm } from '@/lib';
 
-type TypographyVariant = 'heading1' | 'heading2' | 'body1' | 'custom';
+type TypographyVariant =
+  | 'heading1'
+  | 'heading2'
+  | 'heading3'
+  | 'body1'
+  | 'custom';
 
 type TypographyElementType =
   | 'h1'
@@ -52,7 +57,7 @@ const typographyVariantClasses = {
   custom: '',
 };
 
-const elementTotypographyVariantClasses: Partial<
+const typographyVariantClassesMap: Partial<
   Record<TypographyElementType, string>
 > = {
   h1: typographyVariantClasses.heading1,
@@ -70,7 +75,7 @@ export const Typography: TypographyComponent = React.forwardRef(
     const Component = as || 'span';
     const typographyClasses = variant
       ? typographyVariantClasses[variant]
-      : elementTotypographyVariantClasses[as as TypographyElementType];
+      : typographyVariantClassesMap[as as TypographyElementType];
 
     return (
       <Component

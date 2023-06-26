@@ -118,7 +118,7 @@ export const CarRentModal = NiceModal.create(
                     {...{
                       label: engineLabel ?? '',
                       value: engine,
-                      icon: 'enigne',
+                      icon: 'engine',
                     }}
                   />
                 ) : null}

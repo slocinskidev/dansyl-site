@@ -131,4 +131,14 @@ export const query = graphql`
       raw
     }
   }
+
+  fragment ContentfulProjectContent on ContentfulProjectContent {
+    title
+    description {
+      raw
+    }
+    gallery {
+      ...Image
+    }
+  }
 `;

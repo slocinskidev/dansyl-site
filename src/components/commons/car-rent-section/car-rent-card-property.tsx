@@ -11,14 +11,14 @@ interface CarCardPropertyProps {
   value: string;
 }
 
-type IconNames = 'enigne' | 'year' | 'gear' | 'seats' | 'fuel';
+type IconNames = 'engine' | 'year' | 'gear' | 'seats' | 'fuel';
 
 type IconsMapType = {
   [name in IconNames]: JSX.Element;
 };
 
 const iconsMap: IconsMapType = {
-  enigne: <TbEngine className='h-5 w-5 text-lochmara-900' />,
+  engine: <TbEngine className='h-5 w-5 text-lochmara-900' />,
   year: <RxCalendar className='h-5 w-5 text-lochmara-900' />,
   gear: <TbManualGearbox className='h-5 w-5 text-lochmara-900' />,
   seats: <GiCarSeat className='h-5 w-5 text-lochmara-900' />,

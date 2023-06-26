@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-import { graphql, PageProps } from 'gatsby';
 import {
   ContentfulRichTextGatsbyReference,
   renderRichText,
@@ -8,23 +7,27 @@ import {
 } from 'gatsby-source-contentful/rich-text';
 import React from 'react';
 
-import { PageBanner } from '@/components/commons';
-import { Layout } from '@/components/layouts';
+import { Typography } from '@/components/commons';
 import { UnderlineLink } from '@/components/links';
+import { ProjectGallery } from '@/components/projects/project-gallery';
 
-const AboutUsPage = ({
-  data: { contentfulAboutUsPage },
-}: PageProps<Queries.AboutUsPageQuery>) => (
-  <Layout>
-    <PageBanner
-      heading={contentfulAboutUsPage?.banner?.heading ?? null}
-      description={contentfulAboutUsPage?.banner?.description ?? null}
-    />
-    <div className='relative mx-auto grid gap-14 px-4 pt-10 pb-20 lg:py-20'>
-      <div className='mx-auto grid w-full max-w-screen-xl'>
-        {contentfulAboutUsPage?.description
+export const ProjectContent = ({
+  gallery,
+  title,
+  description,
+}: Queries.ContentfulProjectContentFragment) => (
+  <div className='mx-auto grid h-full w-full max-w-screen-xl gap-10 lg:mt-10 lg:grid-cols-2'>
+    <ProjectGallery gallery={gallery} />
+
+    <article className='px-4'>
+      <Typography as='h2' className='mb-4 text-lochmara-900'>
+        {title}
+      </Typography>
+
+      <section className='text-base leading-normal'>
+        {description
           ? renderRichText(
-              contentfulAboutUsPage.description as RenderRichTextData<ContentfulRichTextGatsbyReference>,
+              description as RenderRichTextData<ContentfulRichTextGatsbyReference>,
               {
                 renderNode: {
                   [INLINES.HYPERLINK]: (node, children) => {
@@ -45,23 +48,7 @@ const AboutUsPage = ({
               }
             )
           : null}
-      </div>
-    </div>
-  </Layout>
+      </section>
+    </article>
+  </div>
 );
-
-export default AboutUsPage;
-
-export const query = graphql`
-  query AboutUsPage {
-    contentfulAboutUsPage {
-      pageName
-      banner {
-        ...ContentfulPageBanner
-      }
-      description {
-        raw
-      }
-    }
-  }
-`;

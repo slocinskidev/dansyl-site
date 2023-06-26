@@ -4,22 +4,22 @@ import React from 'react';
 import { PageBanner } from '@/components/commons';
 import { Layout } from '@/components/layouts';
 
-const ProjectPage = ({
-  data: { contentfulProjectPage },
-}: PageProps<Queries.ProjectPageQuery>) => (
+const ProjectsPage = ({
+  data: { contentfulProjectsPage },
+}: PageProps<Queries.ProjectsPageQuery>) => (
   <Layout>
     <PageBanner
-      heading={contentfulProjectPage?.banner?.heading ?? null}
-      description={contentfulProjectPage?.banner?.description ?? null}
+      heading={contentfulProjectsPage?.banner?.heading ?? null}
+      description={contentfulProjectsPage?.banner?.description ?? null}
     />
   </Layout>
 );
 
-export default ProjectPage;
+export default ProjectsPage;
 
 export const query = graphql`
-  query ProjectPage {
-    contentfulProjectPage {
+  query ProjectsPage {
+    contentfulProjectsPage {
       pageName
       banner {
         ...ContentfulPageBanner

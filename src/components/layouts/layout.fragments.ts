@@ -43,7 +43,7 @@ export const query = graphql`
         slug
         pageName
       }
-      ... on ContentfulProjectPage {
+      ... on ContentfulProjectsPage {
         id
         slug
         pageName
