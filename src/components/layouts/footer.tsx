@@ -10,9 +10,14 @@ export type FooterType = {
 } & Pick<Queries.BrandFragment, 'phone' | 'email' | 'facebook'>;
 
 export const Footer = ({ image, phone, email, facebook }: FooterType) => (
-  <footer aria-label='Stopka' className='mx-auto max-w-screen-2xl bg-white'>
-    <div className='mx-auto grid max-w-screen-xl items-center gap-6 px-4 py-10 md:grid-cols-2 md:gap-10 lg:grid-cols-5'>
-      {image ? <Image className='rounded-lg lg:col-span-2' {...image} /> : null}
+  <footer aria-label='Stopka' className='mx-auto max-w-screen-2xl bg-white '>
+    <div className='mx-auto grid max-w-screen-xl items-center gap-6 border-t border-gray-100 px-4 py-10 md:grid-cols-2 md:gap-10 lg:grid-cols-5'>
+      {image ? (
+        <Image
+          className='hidden rounded-lg md:block lg:col-span-2'
+          {...image}
+        />
+      ) : null}
 
       <div className='mt-5 grid gap-8 md:mt-0 lg:col-span-3'>
         <div>

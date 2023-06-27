@@ -7,7 +7,7 @@ import {
 } from 'gatsby-source-contentful/rich-text';
 import React from 'react';
 
-import { Typography } from '@/components/commons';
+import { ContentContainer, Typography } from '@/components/commons';
 import { UnderlineLink } from '@/components/links';
 import { ProjectGallery } from '@/components/projects/project-gallery';
 
@@ -16,7 +16,7 @@ export const ProjectContent = ({
   title,
   description,
 }: Queries.ContentfulProjectContentFragment) => (
-  <div className='mx-auto grid h-full w-full max-w-screen-xl gap-10 lg:mt-10 lg:grid-cols-2'>
+  <ContentContainer className='grid h-full gap-10 lg:my-10 lg:grid-cols-2'>
     <ProjectGallery gallery={gallery} />
 
     <article className='px-4'>
@@ -38,6 +38,9 @@ export const ProjectContent = ({
                   [BLOCKS.UL_LIST]: (_, children) => (
                     <ul className='list-disc'>{children}</ul>
                   ),
+                  [BLOCKS.PARAGRAPH]: (_, children) => (
+                    <p className='mb-4 leading-loose'>{children}</p>
+                  ),
                   [BLOCKS.LIST_ITEM]: (_, children) => (
                     <li className='ml-5'>{children}</li>
                   ),
@@ -50,5 +53,5 @@ export const ProjectContent = ({
           : null}
       </section>
     </article>
-  </div>
+  </ContentContainer>
 );

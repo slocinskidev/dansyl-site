@@ -12,6 +12,7 @@ const CarRentPage = ({
       heading={contentfulCarRentPage?.banner?.heading ?? null}
       description={contentfulCarRentPage?.banner?.description ?? null}
     />
+
     <CarRentList
       {...{
         heading: contentfulCarRentPage?.carRentList?.heading ?? null,

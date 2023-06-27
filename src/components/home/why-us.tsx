@@ -23,7 +23,7 @@ const WhyUs = ({ heading, list, more }: WhyUsProps) => (
         </ul>
       ) : null}
 
-      {more?.label && more.link?.contentfulinternal?.slug ? (
+      {more?.label && more?.link?.contentfulinternal?.slug ? (
         <ButtonLink
           variant='outline'
           href={more.link.contentfulinternal.slug}

@@ -5,7 +5,7 @@ import React from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Typography } from '@/components/commons';
+import { ContentContainer, Typography } from '@/components/commons';
 import { breakpoint } from '@/hooks';
 import { clsxm } from '@/lib';
 
@@ -88,9 +88,9 @@ export const CarRentList = ({
   );
 
   return (
-    <section
+    <ContentContainer
       className={clsxm(
-        'mx-auto my-20 grid max-w-screen-xl gap-4 md:gap-12',
+        'grid gap-4 md:gap-12',
         isSlider && 'max-w-[1436px] px-2'
       )}
     >
@@ -104,6 +104,6 @@ export const CarRentList = ({
       ) : null}
 
       {isSlider ? slider : list}
-    </section>
+    </ContentContainer>
   );
 };

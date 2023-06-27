@@ -94,6 +94,11 @@ export const query = graphql`
           pageName
           slug
         }
+        ... on ContentfulProjectsPage {
+          id
+          pageName
+          slug
+        }
       }
     }
   }
@@ -117,10 +122,12 @@ export const query = graphql`
     }
   }
 
-  fragment ContentfulRecentProjects on ContentfulSingleProjectPage {
+  fragment ContentfulProjectDetailsPage on ContentfulProjectDetailsPage {
     projectName
-    gallery {
-      ...Image
+    projectContent {
+      gallery {
+        ...Image
+      }
     }
     slug
   }
@@ -139,6 +146,16 @@ export const query = graphql`
     }
     gallery {
       ...Image
+    }
+  }
+
+  fragment ContentfulChosenRealizations on ContentfulChosenRealizations {
+    heading
+    button {
+      ...ButtonLink
+    }
+    realizations {
+      ...ContentfulProjectDetailsPage
     }
   }
 `;

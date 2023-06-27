@@ -26,8 +26,8 @@ const ProjectDetailsPage = ({
 export default ProjectDetailsPage;
 
 export const query = graphql`
-  query ProjectDetailsPage($projectName: String) {
-    contentfulProjectDetailsPage(projectName: { eq: $projectName }) {
+  query ProjectDetailsPage($slug: String) {
+    contentfulProjectDetailsPage(slug: { eq: $slug }) {
       projectName
       realizationDate
       projectContent {

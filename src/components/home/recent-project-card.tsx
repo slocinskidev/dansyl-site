@@ -5,20 +5,20 @@ import { UnstyledLink } from '@/components/links';
 import { DEFAULT_PATH } from '@/constants';
 
 interface RecentProjectCardProps
-  extends Queries.ContentfulRecentProjectsFragment {}
+  extends Queries.ContentfulProjectDetailsPageFragment {}
 
 export const RecentProjectCard = ({
   projectName,
-  gallery,
+  projectContent,
   slug,
 }: RecentProjectCardProps) => (
   <UnstyledLink
     href={slug ?? DEFAULT_PATH}
     className='group relative block h-full'
   >
-    {gallery?.[0] ? (
+    {projectContent?.gallery?.[0] ? (
       <Image
-        {...gallery[0]}
+        {...projectContent.gallery[0]}
         className='h-full transition-opacity duration-500 group-hover:opacity-80'
       />
     ) : null}

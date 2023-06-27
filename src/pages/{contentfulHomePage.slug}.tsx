@@ -8,7 +8,7 @@ import WhyUs from '@/components/home/why-us';
 import { Layout } from '@/components/layouts';
 
 const HomePage = ({
-  data: { contentfulHomePage, allContentfulSingleProjectPage },
+  data: { contentfulHomePage },
 }: PageProps<Queries.HomePageQuery>) => (
   <Layout>
     <HeroBanner
@@ -20,6 +20,7 @@ const HomePage = ({
         secondButton: contentfulHomePage?.heroBanner?.secondButton ?? null,
       }}
     />
+
     <WhyUs
       {...{
         heading: contentfulHomePage?.whyUs?.heading ?? null,
@@ -27,6 +28,7 @@ const HomePage = ({
         more: contentfulHomePage?.whyUs?.more ?? null,
       }}
     />
+
     <CarRentList
       {...{
         heading: contentfulHomePage?.carRentList?.heading ?? null,
@@ -42,7 +44,9 @@ const HomePage = ({
         isSlider: true,
       }}
     />
+
     <OpinionList />
+
     <Faq
       {...{
         heading: contentfulHomePage?.faq?.heading ?? null,
@@ -50,9 +54,13 @@ const HomePage = ({
         image: contentfulHomePage?.faq?.image ?? null,
       }}
     />
+
     <RecentProjects
       {...{
-        recentProjects: allContentfulSingleProjectPage.recentProjects ?? [],
+        heading: contentfulHomePage?.chosenRealizations?.heading ?? null,
+        button: contentfulHomePage?.chosenRealizations?.button ?? null,
+        realizations:
+          contentfulHomePage?.chosenRealizations?.realizations ?? [],
       }}
     />
   </Layout>
@@ -75,13 +83,8 @@ export const query = graphql`
       faq {
         ...Faq
       }
-    }
-    allContentfulSingleProjectPage(
-      limit: 3
-      sort: { order: DESC, fields: createdAt }
-    ) {
-      recentProjects: nodes {
-        ...ContentfulRecentProjects
+      chosenRealizations {
+        ...ContentfulChosenRealizations
       }
     }
   }
