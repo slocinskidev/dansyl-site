@@ -3,7 +3,6 @@ import React from 'react';
 
 import { CarRentList } from '@/components/commons';
 import { Faq, HeroBanner, RecentProjects } from '@/components/home';
-import OpinionList from '@/components/home/opinion-list';
 import WhyUs from '@/components/home/why-us';
 import { Layout } from '@/components/layouts';
 
@@ -45,15 +44,7 @@ const HomePage = ({
       }}
     />
 
-    <OpinionList />
-
-    <Faq
-      {...{
-        heading: contentfulHomePage?.faq?.heading ?? null,
-        list: contentfulHomePage?.faq?.list ?? null,
-        image: contentfulHomePage?.faq?.image ?? null,
-      }}
-    />
+    {/* <OpinionList /> */}
 
     <RecentProjects
       {...{
@@ -61,6 +52,14 @@ const HomePage = ({
         button: contentfulHomePage?.chosenRealizations?.button ?? null,
         realizations:
           contentfulHomePage?.chosenRealizations?.realizations ?? [],
+      }}
+    />
+
+    <Faq
+      {...{
+        heading: contentfulHomePage?.faq?.heading ?? null,
+        list: contentfulHomePage?.faq?.list ?? null,
+        image: contentfulHomePage?.faq?.image ?? null,
       }}
     />
   </Layout>

@@ -201,52 +201,59 @@ export const CarRentModal = NiceModal.create(
             </button>
           </div>
 
-          <Swiper
-            loop
-            spaceBetween={16}
-            navigation
-            pagination
-            thumbs={{ swiper: thumbsSwiper }}
-            modules={[FreeMode, Navigation, Thumbs, Pagination]}
-            className='car-rent-slider mt-10 h-fit w-full'
-          >
-            {gallery?.map((image) =>
-              image ? (
-                <SwiperSlide
-                  key={image?.description}
-                  className='cursor-pointer'
+          {gallery?.length && (
+            <>
+              <Swiper
+                loop
+                spaceBetween={16}
+                navigation
+                pagination={{ clickable: true }}
+                thumbs={{ swiper: thumbsSwiper }}
+                modules={[FreeMode, Navigation, Thumbs, Pagination]}
+                className='car-rent-slider mt-10 h-fit w-full'
+              >
+                {gallery?.map((image) =>
+                  image ? (
+                    <SwiperSlide
+                      key={image?.description}
+                      className='cursor-pointer'
+                    >
+                      <Image {...image} className='w-full' />
+                    </SwiperSlide>
+                  ) : null
+                )}
+              </Swiper>
+
+              {gallery.length > 1 && (
+                <Swiper
+                  onSwiper={setThumbsSwiper}
+                  loop
+                  spaceBetween={0}
+                  slidesPerView={2}
+                  breakpoints={{
+                    [breakpoint.md]: {
+                      slidesPerView: 4,
+                    },
+                  }}
+                  freeMode
+                  watchSlidesProgress
+                  modules={[FreeMode, Navigation, Thumbs]}
+                  className='car-rent-thumb-slider mt-4 h-fit w-full'
                 >
-                  <Image {...image} className='w-full' />
-                </SwiperSlide>
-              ) : null
-            )}
-          </Swiper>
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            loop
-            spaceBetween={0}
-            slidesPerView={2}
-            breakpoints={{
-              [breakpoint.md]: {
-                slidesPerView: 4,
-              },
-            }}
-            freeMode
-            watchSlidesProgress
-            modules={[FreeMode, Navigation, Thumbs]}
-            className='car-rent-thumb-slider mt-4 h-fit w-full'
-          >
-            {gallery?.map((image) =>
-              image ? (
-                <SwiperSlide
-                  key={image?.description}
-                  className='cursor-pointer'
-                >
-                  <Image {...image} />
-                </SwiperSlide>
-              ) : null
-            )}
-          </Swiper>
+                  {gallery?.map((image) =>
+                    image ? (
+                      <SwiperSlide
+                        key={image?.description}
+                        className='cursor-pointer'
+                      >
+                        <Image {...image} />
+                      </SwiperSlide>
+                    ) : null
+                  )}
+                </Swiper>
+              )}
+            </>
+          )}
         </div>
       </>
     );

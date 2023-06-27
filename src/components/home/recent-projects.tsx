@@ -18,15 +18,18 @@ export const RecentProjects = ({
       ) : null}
 
       {realizations?.length ? (
-        <ul className='mt-8 grid grid-cols-1 gap-4 md:mt-12 lg:grid-cols-3'>
-          {realizations.map((project) => (
-            <li
-              key={project?.slug}
-              className='last:lg:col-start-0 last:lg:col-span-2 last:lg:row-span-2 last:lg:row-start-1'
-            >
-              <RecentProjectCard {...project} />
-            </li>
-          ))}
+        <ul className='mt-8 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-2 lg:grid-cols-3'>
+          {realizations.map(
+            (project) =>
+              project && (
+                <li
+                  key={project?.slug}
+                  className='last:lg:col-start-0 last:lg:col-span-2 last:lg:row-span-2 last:lg:row-start-1'
+                >
+                  <RecentProjectCard {...project} />
+                </li>
+              )
+          )}
         </ul>
       ) : null}
 

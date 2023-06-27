@@ -5,13 +5,27 @@ import React from 'react';
 import { Image } from '@/components/commons/image';
 import { UnderlineLink, UnstyledLink } from '@/components/links';
 
-export type FooterType = {
+interface FooterProps
+  extends Omit<Queries.BrandFragment, 'logo' | 'companyDescription'> {
   image?: Queries.ImageFragment;
-} & Pick<Queries.BrandFragment, 'phone' | 'email' | 'facebook'>;
+  callUsLabel?: Queries.ContentfulFooter['callUsLabel'];
+  navigation: Queries.NavigationFragment | null;
+}
 
-export const Footer = ({ image, phone, email, facebook }: FooterType) => (
-  <footer aria-label='Stopka' className='mx-auto max-w-screen-2xl bg-white '>
-    <div className='mx-auto grid max-w-screen-xl items-center gap-6 border-t border-gray-100 px-4 py-10 md:grid-cols-2 md:gap-10 lg:grid-cols-5'>
+export const Footer = ({
+  image,
+  phone,
+  email,
+  facebook,
+  companyName,
+  openHours,
+  facebookLabel,
+  emailLabel,
+  navigation,
+  callUsLabel,
+}: FooterProps) => (
+  <footer className='bg-gray-100 px-4'>
+    <div className='mx-auto grid max-w-screen-xl items-center gap-4 py-10 md:grid-cols-2 md:gap-10 lg:grid-cols-5'>
       {image ? (
         <Image
           className='hidden rounded-lg md:block lg:col-span-2'
@@ -22,9 +36,12 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
       <div className='mt-5 grid gap-8 md:mt-0 lg:col-span-3'>
         <div>
           <p>
-            <span className='text-xs uppercase tracking-wide text-gray-500'>
-              Zadzwoń do nas
-            </span>
+            {callUsLabel ? (
+              <span className='text-xs uppercase tracking-wide text-gray-500'>
+                {callUsLabel}
+              </span>
+            ) : null}
+
             {phone
               ? phone.map(
                   (tel) =>
@@ -40,11 +57,13 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
                 )
               : null}
           </p>
-
-          <ul className='mt-8 space-y-1 text-sm text-gray-700'>
-            <li>Poniedziałek - piątek: 8:00 - 16:00</li>
-            <li>Sobota: 9:00 - 13:00</li>
-          </ul>
+          {openHours ? (
+            <ul className='mt-8 space-y-1 text-sm text-gray-700'>
+              {openHours.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : null}
 
           <ul className='mt-8 flex gap-6'>
             <li>
@@ -52,7 +71,7 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
                 href={facebook ?? '/'}
                 className='text-gray-700 transition-colors hover:text-lochmara-600'
               >
-                <span className='sr-only'>Facebook</span>
+                <span className='sr-only'>{facebookLabel}</span>
 
                 <FaFacebookSquare className='h-6 w-6' />
               </UnstyledLink>
@@ -63,7 +82,7 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
                 href={`mailto:${email}`}
                 className='text-gray-700 transition-colors hover:text-lochmara-600'
               >
-                <span className='sr-only'>Email</span>
+                <span className='sr-only'>{emailLabel}</span>
 
                 <HiOutlineMail className='h-6 w-6' />
               </UnstyledLink>
@@ -71,38 +90,29 @@ export const Footer = ({ image, phone, email, facebook }: FooterType) => (
           </ul>
         </div>
 
-        <nav aria-label='Nawigacja - stopka' className='mt-6'>
-          <ul className='flex max-h-24 flex-col flex-wrap gap-y-3 gap-x-5 text-sm'>
-            <li>
-              <UnderlineLink href='/'>O Nas</UnderlineLink>
-            </li>
-
-            <li>
-              <UnderlineLink href='/'>Oferta</UnderlineLink>
-            </li>
-
-            <li>
-              <UnderlineLink href='/'>Wynajem aut</UnderlineLink>
-            </li>
-
-            <li>
-              <UnderlineLink href='/'>Realizacje</UnderlineLink>
-            </li>
-
-            <li>
-              <UnderlineLink href='/'>Pytania i odpowiedzi</UnderlineLink>
-            </li>
-
-            <li>
-              <UnderlineLink href='/'>Kontakt</UnderlineLink>
-            </li>
-          </ul>
-        </nav>
+        {navigation ? (
+          <nav className='mt-6'>
+            <ul className='flex flex-wrap gap-y-5 gap-x-10 text-sm sm:max-h-36 sm:flex-col sm:gap-x-5'>
+              {navigation?.list?.map(
+                (item) =>
+                  item?.slug &&
+                  item?.pageName && (
+                    <li key={item.slug}>
+                      <UnderlineLink href={item.slug}>
+                        {item.pageName}
+                      </UnderlineLink>
+                    </li>
+                  )
+              )}
+            </ul>
+          </nav>
+        ) : null}
       </div>
 
-      <div className='col-span-full mt-6 border-t border-gray-100 pt-10'>
+      <div className='col-span-full mt-6 border-t border-gray-200 pt-10'>
         <p className='text-center text-xs text-gray-500'>
-          &copy; {new Date().getFullYear()} dansyl.pl
+          &copy;
+          {` ${new Date().getFullYear()} ${companyName?.companyName || ''}`}
         </p>
       </div>
     </div>

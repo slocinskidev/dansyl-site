@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Accordion } from '@/components/commons';
+import { Accordion, ContentContainer } from '@/components/commons';
 
 export const FaqList = ({ list }: { list: Queries.AccordionFragment[] }) => (
-  <section className='mx-auto my-20 grid max-w-screen-xl items-start gap-8 px-4'>
+  <ContentContainer>
     {list?.length ? (
       <ul className='mx-auto grid w-full max-w-4xl gap-4'>
         {list.map((item) => (
@@ -16,5 +16,5 @@ export const FaqList = ({ list }: { list: Queries.AccordionFragment[] }) => (
         ))}
       </ul>
     ) : null}
-  </section>
+  </ContentContainer>
 );

@@ -13,6 +13,7 @@ const FaqPage = ({
       heading={contentfulFaqPage?.banner?.heading ?? null}
       description={contentfulFaqPage?.banner?.description ?? null}
     />
+
     <FaqList list={contentfulFaqPage?.list as Queries.AccordionFragment[]} />
   </Layout>
 );

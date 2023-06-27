@@ -11,14 +11,23 @@ export const query = graphql`
     companyDescription {
       companyDescription
     }
+    emailLabel
     email
+    phoneLabel
     phone
+    facebookLabel
     facebook
+    openHours
   }
 
   fragment Navigation on ContentfulNavigation {
     list {
       ... on ContentfulAboutUsPage {
+        id
+        slug
+        pageName
+      }
+      ... on ContentfulHomePage {
         id
         slug
         pageName

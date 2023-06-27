@@ -15,6 +15,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           image {
             ...Image
           }
+          callUsLabel
         }
         contentfulNavigation {
           ...Navigation
@@ -35,10 +36,17 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <main id='main'>{children}</main>
       <Footer
         {...{
-          email: contentfulBrand?.email || '',
+          companyName: contentfulBrand?.companyName ?? null,
+          email: contentfulBrand?.email ?? null,
+          emailLabel: contentfulBrand?.emailLabel ?? null,
           phone: contentfulBrand?.phone || [''],
+          phoneLabel: contentfulBrand?.phoneLabel ?? null,
           image: contentfulFooter?.image || undefined,
-          facebook: contentfulBrand?.facebook || '',
+          facebook: contentfulBrand?.facebook ?? null,
+          facebookLabel: contentfulBrand?.facebookLabel ?? null,
+          openHours: contentfulBrand?.openHours ?? null,
+          navigation: contentfulNavigation,
+          callUsLabel: contentfulFooter?.callUsLabel ?? null,
         }}
       />
     </NiceModal.Provider>

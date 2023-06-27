@@ -22,7 +22,6 @@ export const Navigation = ({
 
   return (
     <nav
-      aria-label='Główna nawigacja'
       className={clsxm(
         'hidden items-center gap-24 lg:flex',
         isMobileAndOpen &&
