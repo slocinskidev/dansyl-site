@@ -27,6 +27,7 @@
     "@contentful/rich-text-types": "^16.0.2",
     "@ebay/nice-modal-react": "^1.2.8",
     "@loadable/webpack-plugin": "^5.15.2",
+    "@phosphor-icons/react": "^2.0.10",
     "@react-icons/all-files": "^4.1.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "clsx": "^1.2.1",

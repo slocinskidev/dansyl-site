@@ -158,4 +158,11 @@ export const query = graphql`
       ...ContentfulProjectDetailsPage
     }
   }
+
+  fragment ContentfulAddress on ContentfulAddress {
+    label
+    street
+    postalCode
+    city
+  }
 `;
