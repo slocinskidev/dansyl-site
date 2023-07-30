@@ -100,10 +100,7 @@ export const CarRentList = ({
 
   return (
     <ContentContainer
-      className={clsxm(
-        'grid gap-4 md:gap-12',
-        isSlider && 'max-w-[1436px] px-2'
-      )}
+      className={clsxm('grid gap-4 md:gap-12', isSlider && 'max-w-[1436px]')}
     >
       {isSlider ? slider : list}
     </ContentContainer>

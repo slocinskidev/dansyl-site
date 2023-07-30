@@ -9,8 +9,8 @@ export const RecentProjects = ({
   button,
   realizations,
 }: Queries.ContentfulChosenRealizationsFragment) => (
-  <section className='bg-gray-100'>
-    <div className='mx-auto max-w-screen-xl px-4 py-20'>
+  <section className='bg-gray-100 px-4'>
+    <div className='mx-auto max-w-screen-xl py-20'>
       {heading ? (
         <Typography as='h2' variant='heading2' className='text-lochmara-900'>
           {heading}

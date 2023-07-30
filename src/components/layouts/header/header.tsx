@@ -25,9 +25,9 @@ export const Header = ({ logo, navigation }: HeaderType) => {
       />
       <header
         aria-label='Site Header'
-        className='sticky top-0 z-10 bg-white shadow-sm'
+        className='sticky top-0 z-10 bg-white px-4 shadow-sm'
       >
-        <div className='mx-auto max-w-screen-xl px-4'>
+        <div className='mx-auto max-w-screen-xl'>
           <div
             className={clsxm(
               'flex h-16 items-center justify-between',
@@ -35,7 +35,6 @@ export const Header = ({ logo, navigation }: HeaderType) => {
             )}
           >
             <UnstyledLink href='/'>
-              {/* TODO: this text should come from CMS */}
               <span className='sr-only'>Strona główna</span>
               <Image {...logo} className='w-40' />
             </UnstyledLink>

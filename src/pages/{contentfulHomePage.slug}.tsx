@@ -44,8 +44,6 @@ const HomePage = ({
       }}
     />
 
-    {/* <OpinionList /> */}
-
     <RecentProjects
       {...{
         heading: contentfulHomePage?.chosenRealizations?.heading ?? null,

@@ -43,7 +43,7 @@ export const ContactSection = ({
 }: ContactSectionProps) => (
   <ContentContainer className='gap-10 md:gap-20'>
     <div className='mx-auto grid gap-10'>
-      <div className='grid max-w-screen-md gap-4 text-center text-gray-800'>
+      <div className='mx-auto grid max-w-screen-md gap-4 text-center text-gray-800'>
         {introHeading && (
           <h2 className='text-4xl text-lochmara-900'>{introHeading}</h2>
         )}
