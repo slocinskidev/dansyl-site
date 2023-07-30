@@ -26,7 +26,7 @@ export const CarRentCard = ({
   Omit<Queries.CarRentListFragment, 'heading' | 'carList'>) => (
   <button
     type='button'
-    className='grid rounded-lg text-left shadow-sm shadow-indigo-100 transition-shadow hover:shadow-lg'
+    className='grid w-full rounded-lg text-left shadow-sm shadow-indigo-100 transition-shadow hover:shadow-lg'
     onClick={() => {
       NiceModal.show('car-rent-modal', {
         name,
@@ -63,7 +63,7 @@ export const CarRentCard = ({
         </div>
       </dl>
 
-      <ul className='mt-6 flex flex-wrap items-center gap-8 text-xs md:gap-5'>
+      <ul className='mt-6 grid grid-cols-2 items-center gap-8 text-xs md:gap-5'>
         {engine ? (
           <CarCardProperty
             {...{ label: engineLabel ?? '', value: engine, icon: 'engine' }}
