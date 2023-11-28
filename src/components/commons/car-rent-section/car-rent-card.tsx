@@ -47,7 +47,12 @@ export const CarRentCard = ({
       });
     }}
   >
-    {gallery?.[0] ? <Image className='rounded-t-lg' {...gallery[0]} /> : null}
+    {gallery?.[0] ? (
+      <Image
+        className='aspect-video max-h-[300px] rounded-t-lg'
+        {...gallery[0]}
+      />
+    ) : null}
     <div className='mt-4 p-4 md:p-8'>
       <dl>
         <div>

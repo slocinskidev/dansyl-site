@@ -36,7 +36,7 @@ export const Header = ({ logo, navigation }: HeaderType) => {
           >
             <UnstyledLink href='/'>
               <span className='sr-only'>Strona główna</span>
-              <Image {...logo} className='w-40' />
+              <Image {...logo} className='aspect-[32/7] h-10' />
             </UnstyledLink>
 
             <Hamburger {...{ isOpen, toggleIsOpen }} />
