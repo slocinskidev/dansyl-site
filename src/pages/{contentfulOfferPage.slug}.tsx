@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import {
   ContentfulRichTextGatsbyReference,
   renderRichText,
@@ -9,6 +9,7 @@ import {
 import React from 'react';
 
 import { ContentContainer, PageBanner } from '@/components/commons';
+import { Seo } from '@/components/commons/seo';
 import { Layout } from '@/components/layouts';
 import { UnderlineLink } from '@/components/links';
 
@@ -67,3 +68,7 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: HeadProps<Queries.OfferPageQuery>) => (
+  <Seo title={data.contentfulOfferPage?.pageName ?? undefined} />
+);

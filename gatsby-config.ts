@@ -6,10 +6,11 @@ config({
 });
 
 const siteMetadata: GatsbyConfig['siteMetadata'] = {
-  siteUrl: 'http://localhost/8000',
+  siteUrl: 'https://dansyl.pl',
   title: 'Dansyl',
-  description: '',
-  image: '/favicon.png',
+  description:
+    'Jesteśmy warsztatem posiadającym ogromny staż w swoim fachu, podejmujemy się każdej pracy i wykonujemy ją sumiennie, każde auto, które do nas trafia jest traktowane jak nasze własne. Podczas wykonywanych usług zabezpieczamy środek auta przed jakimikolwiek zabrudzeniami, dodatkowo przed oddaniem pojazdu sprzątamy go dokładnie wewnątrz i zewnątrz jesteśmy zaufanym warsztatem, który współpracuje z dużą ilością ubezpieczalni, dla dwóch z nich jesteśmy zakładem partnerskim w tym rejonie. Staramy się, aby każdy klient był usatysfakcjonowany z naszej pracy.',
+  image: './src/assets/images/logo-secondary.png',
 };
 
 const plugins: GatsbyConfig['plugins'] = [
@@ -34,7 +35,7 @@ const plugins: GatsbyConfig['plugins'] = [
   {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      icon: 'src/assets/images/icon.png',
+      icon: 'src/assets/images/logo-secondary.png',
     },
   },
   'gatsby-plugin-sharp',

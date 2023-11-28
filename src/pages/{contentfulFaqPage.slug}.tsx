@@ -1,7 +1,8 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import React from 'react';
 
 import { PageBanner } from '@/components/commons';
+import { Seo } from '@/components/commons/seo';
 import { FaqList } from '@/components/faq/faq-list';
 import { Layout } from '@/components/layouts';
 
@@ -33,3 +34,7 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: HeadProps<Queries.FaqPageQuery>) => (
+  <Seo title={data.contentfulFaqPage?.pageName ?? undefined} />
+);

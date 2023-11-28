@@ -1,7 +1,8 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import React from 'react';
 
 import { ContentContainer, PageBanner } from '@/components/commons';
+import { Seo } from '@/components/commons/seo';
 import { RecentProjectCard } from '@/components/home/recent-project-card';
 import { Layout } from '@/components/layouts';
 
@@ -45,3 +46,7 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: HeadProps<Queries.ProjectsPageQuery>) => (
+  <Seo title={data.contentfulProjectsPage?.pageName ?? undefined} />
+);

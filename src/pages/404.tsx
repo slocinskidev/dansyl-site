@@ -1,5 +1,7 @@
-import * as React from 'react';
 import { Link } from 'gatsby';
+import * as React from 'react';
+
+import { Seo } from '@/components/commons/seo';
 
 const pageStyles = {
   color: '#232129',
@@ -15,33 +17,19 @@ const headingStyles = {
 const paragraphStyles = {
   marginBottom: 48,
 };
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-};
 
 const NotFoundPage = () => (
   <main style={pageStyles}>
-    <h1 style={headingStyles}>Page not found</h1>
+    <h1 style={headingStyles}>Nie znaleziono strony</h1>
     <p style={paragraphStyles}>
-      Sorry 😔, we couldn’t find what you were looking for.
+      Przepraszamy 😔, nie możemy znaleźć strony, której szukasz.
       <br />
-      {process.env.NODE_ENV === 'development' ? (
-        <>
-          <br />
-          Try creating a page in <code style={codeStyles}>src/pages/</code>.
-          <br />
-        </>
-      ) : null}
       <br />
-      <Link to='/'>Go home</Link>.
+      <Link to='/'>Strona główna</Link>.
     </p>
   </main>
 );
 
 export default NotFoundPage;
 
-export const Head = () => <title>Not found</title>;
+export const Head = () => <Seo title='Nie znaleziono strony' />;

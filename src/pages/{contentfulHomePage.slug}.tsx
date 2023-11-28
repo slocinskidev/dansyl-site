@@ -1,7 +1,8 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import React from 'react';
 
 import { CarRentList } from '@/components/commons';
+import { Seo } from '@/components/commons/seo';
 import { Faq, HeroBanner, RecentProjects } from '@/components/home';
 import WhyUs from '@/components/home/why-us';
 import { Layout } from '@/components/layouts';
@@ -68,6 +69,7 @@ export default HomePage;
 export const query = graphql`
   query HomePage {
     contentfulHomePage {
+      pageName
       heroBanner {
         ...HeroBanner
       }
@@ -86,3 +88,7 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: HeadProps<Queries.HomePageQuery>) => (
+  <Seo title={data.contentfulHomePage?.pageName ?? undefined} />
+);

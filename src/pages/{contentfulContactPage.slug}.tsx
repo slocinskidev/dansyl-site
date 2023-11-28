@@ -1,7 +1,8 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import React from 'react';
 
 import { PageBanner } from '@/components/commons';
+import { Seo } from '@/components/commons/seo';
 import { ContactSection } from '@/components/contact/contact-section';
 import { Layout } from '@/components/layouts';
 
@@ -60,3 +61,7 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: HeadProps<Queries.ContactPageQuery>) => (
+  <Seo title={data.contentfulContactPage?.pageName ?? undefined} />
+);
