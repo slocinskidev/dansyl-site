@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiSolidCarMechanic } from 'react-icons/bi';
 import { FaCarSide } from 'react-icons/fa';
 import { GiAutoRepair } from 'react-icons/gi';
 import { MdCarRepair } from 'react-icons/md';
@@ -6,7 +7,12 @@ import { MdCarRepair } from 'react-icons/md';
 import PaintSpray from '@/assets/icons/paint-spray.svg';
 import { Typography } from '@/components/commons';
 
-type IconNames = 'paint-spray' | 'auto-repair' | 'car-repair' | 'car-side';
+type IconNames =
+  | 'paint-spray'
+  | 'auto-repair'
+  | 'car-repair'
+  | 'car-side'
+  | 'car-mechanic';
 
 type IconsMapType = {
   [name in IconNames]: JSX.Element;
@@ -17,6 +23,7 @@ const iconsMap: IconsMapType = {
   'auto-repair': <GiAutoRepair className='h-5 w-5' />,
   'car-repair': <MdCarRepair className='h-5 w-5' />,
   'car-side': <FaCarSide className='h-5 w-5' />,
+  'car-mechanic': <BiSolidCarMechanic className='h-5 w-5' />,
 };
 
 export const WhyUsCard = ({
