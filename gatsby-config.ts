@@ -27,7 +27,7 @@ const plugins: GatsbyConfig['plugins'] = [
     resolve: 'gatsby-plugin-react-svg',
     options: {
       rule: {
-        include: /icons/, // See below to configure properly
+        include: /icons/,
       },
     },
   },
