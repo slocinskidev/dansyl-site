@@ -8,13 +8,23 @@ import React from 'react';
 import { Image, Typography } from '@/components/commons';
 import { ButtonLink } from '@/components/links';
 
+interface HeroBannerProps {
+  heading?: string | null;
+  description?: {
+    raw: string | null;
+  } | null;
+  image?: Queries.ImageFragment | null;
+  firstButton?: Queries.ButtonLinkFragment | null;
+  secondButton?: Queries.ButtonLinkFragment | null;
+}
+
 export const HeroBanner = ({
   heading,
   description,
   image,
   firstButton,
   secondButton,
-}: Queries.HeroBannerFragment) => (
+}: HeroBannerProps) => (
   <div className='relative mx-auto grid place-items-center gap-14 bg-gray-100 px-4 pt-10 pb-20 lg:py-20'>
     <div className='mx-auto grid max-w-screen-xl place-items-center gap-14 lg:grid-cols-2'>
       {image ? (

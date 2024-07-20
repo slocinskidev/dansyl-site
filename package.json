@@ -44,6 +44,7 @@
     "gatsby-transformer-sharp": "^4.24.0",
     "html-react-parser": "^3.0.8",
     "lodash": "^4.17.21",
+    "pretty-bytes": "^6.1.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^5.0.1",
@@ -109,5 +110,6 @@
     "**/*.{json,css,scss,md}": [
       "prettier -w"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

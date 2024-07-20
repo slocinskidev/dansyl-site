@@ -13,11 +13,11 @@ const HomePage = ({
   <Layout>
     <HeroBanner
       {...{
-        heading: contentfulHomePage?.heroBanner?.heading ?? null,
-        description: contentfulHomePage?.heroBanner?.description ?? null,
-        image: contentfulHomePage?.heroBanner?.image ?? null,
-        firstButton: contentfulHomePage?.heroBanner?.firstButton ?? null,
-        secondButton: contentfulHomePage?.heroBanner?.secondButton ?? null,
+        heading: contentfulHomePage?.heroHeading ?? null,
+        description: contentfulHomePage?.heroDescription ?? null,
+        image: contentfulHomePage?.heroImage ?? null,
+        firstButton: contentfulHomePage?.heroFirstButton ?? null,
+        secondButton: contentfulHomePage?.heroSecondButton ?? null,
       }}
     />
 
@@ -70,8 +70,18 @@ export const query = graphql`
   query HomePage {
     contentfulHomePage {
       pageName
-      heroBanner {
-        ...HeroBanner
+      heroHeading
+      heroDescription {
+        raw
+      }
+      heroImage {
+        ...Image
+      }
+      heroFirstButton {
+        ...ButtonLink
+      }
+      heroSecondButton {
+        ...ButtonLink
       }
       whyUs {
         ...WhyUs

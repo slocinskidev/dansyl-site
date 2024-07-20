@@ -1,22 +1,6 @@
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  fragment HeroBanner on ContentfulHeroBanner {
-    heading
-    description {
-      raw
-    }
-    image {
-      ...Image
-    }
-    firstButton {
-      ...ButtonLink
-    }
-    secondButton {
-      ...ButtonLink
-    }
-  }
-
   fragment ContentfulCarRentModal on ContentfulCarRentModal {
     callUsLabel
     choosenCarLabel
@@ -157,12 +141,5 @@ export const query = graphql`
     realizations {
       ...ContentfulProjectDetailsPage
     }
-  }
-
-  fragment ContentfulAddress on ContentfulAddress {
-    label
-    street
-    postalCode
-    city
   }
 `;

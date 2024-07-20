@@ -26,14 +26,20 @@ interface ContactSectionProps
       | 'openHoursLabel'
       | 'openHours'
     > {
-  address: Queries.ContentfulAddressFragment | null;
+  addressLabel?: string | null;
+  addressStreet?: string | null;
+  addressPostalCode?: string | null;
+  addressCity?: string | null;
 }
 export const ContactSection = ({
   introHeading,
   introDescription,
   mapDescription,
   mapHeading,
-  address,
+  addressLabel,
+  addressStreet,
+  addressPostalCode,
+  addressCity,
   openHours,
   openHoursLabel,
   emailLabel,
@@ -128,7 +134,7 @@ export const ContactSection = ({
           </li>
         )}
 
-        {address && (
+        {addressLabel && addressStreet && addressPostalCode && addressCity && (
           <li>
             <div className='flex items-center gap-4'>
               <div className='h-fit w-fit rounded-full bg-lochmara-900 p-3'>
@@ -137,14 +143,14 @@ export const ContactSection = ({
 
               <div>
                 <h3 className='text-xs font-medium text-gray-500'>
-                  {address.label}
+                  {addressLabel}
                 </h3>
                 <p className='text-lg font-medium text-gray-900'>
-                  {address.street}
+                  {addressStreet}
                 </p>
 
                 <p className='-mt-1 text-lg font-medium text-gray-900'>
-                  {`${address.postalCode} ${address.city}`}
+                  {`${addressPostalCode} ${addressCity}`}
                 </p>
               </div>
             </div>

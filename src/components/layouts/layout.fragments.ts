@@ -57,6 +57,11 @@ export const query = graphql`
         slug
         pageName
       }
+      ... on ContentfulReportDamagePage {
+        id
+        slug
+        pageName
+      }
     }
     highlightItem {
       id

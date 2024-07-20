@@ -4,18 +4,6 @@ import { resolve } from 'path';
 
 const PROJECT_ROOT = resolve(__dirname);
 
-// TODO: remove later
-// export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
-//   ({ actions }) => {
-//     actions.createTypes(`
-//
-//
-//     type ContentfulHomePage {
-//         pageName: String!
-//       }
-//   `);
-//   };
-
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   actions,
 }) => {

@@ -25,7 +25,10 @@ const ContactPage = ({
       openHours={contentfulBrand?.openHours ?? null}
       phoneLabel={contentfulBrand?.phoneLabel ?? null}
       phone={contentfulBrand?.phone ?? null}
-      address={contentfulBrand?.address ?? null}
+      addressLabel={contentfulBrand?.addressLabel ?? null}
+      addressStreet={contentfulBrand?.addressStreet ?? null}
+      addressPostalCode={contentfulBrand?.addressPostalCode ?? null}
+      addressCity={contentfulBrand?.addressCity ?? null}
     />
   </Layout>
 );
@@ -55,9 +58,10 @@ export const query = graphql`
       openHours
       phoneLabel
       phone
-      address {
-        ...ContentfulAddress
-      }
+      addressLabel
+      addressStreet
+      addressPostalCode
+      addressCity
     }
   }
 `;
